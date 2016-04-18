@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		101E35C01B7102CB0088C0B3 /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 101E35BF1B7102CB0088C0B3 /* msso_config.json */; };
+		1057AF611B4EDED3006E7C33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1057AF601B4EDED3006E7C33 /* main.m */; };
+		1057AF641B4EDED3006E7C33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1057AF631B4EDED3006E7C33 /* AppDelegate.m */; };
+		1057AF6C1B4EDED4006E7C33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1057AF6B1B4EDED4006E7C33 /* Images.xcassets */; };
+		1057AF6F1B4EDED4006E7C33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1057AF6D1B4EDED4006E7C33 /* LaunchScreen.xib */; };
+		1057AF7B1B4EDED4006E7C33 /* ConnectaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1057AF7A1B4EDED4006E7C33 /* ConnectaAppTests.m */; };
+		1057AF941B4EDFAF006E7C33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1057AF921B4EDFAF006E7C33 /* ViewController.m */; };
+		1057AF971B4EDFBC006E7C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1057AF951B4EDFBC006E7C33 /* Main.storyboard */; };
+		106157C71B598ED5002E12FF /* SANLU06mac843.crt in Resources */ = {isa = PBXBuildFile; fileRef = 106157C51B598ED5002E12FF /* SANLU06mac843.crt */; };
+		106157C81B598ED5002E12FF /* SANLU06mac843.key in Resources */ = {isa = PBXBuildFile; fileRef = 106157C61B598ED5002E12FF /* SANLU06mac843.key */; };
+		10750A201BCDCFDF00D7BC4F /* MASConnecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */; };
+		10750A4D1BCDE2B600D7BC4F /* ServerCertificate.crt in Resources */ = {isa = PBXBuildFile; fileRef = 10750A4C1BCDE2B600D7BC4F /* ServerCertificate.crt */; };
+		10750A4F1BCDE5F700D7BC4F /* MagServerCert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 10750A4E1BCDE5F700D7BC4F /* MagServerCert.crt */; };
+		10A321571BFAAA93000CE561 /* MASFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A321561BFAAA93000CE561 /* MASFoundation.framework */; };
+		10A321661BFABA67000CE561 /* MASFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A321611BFABA50000CE561 /* MASFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10C016DB1BD6FD3600E26B8F /* MASConnecta.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1057AF751B4EDED4006E7C33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1057AF531B4EDED3006E7C33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1057AF5A1B4EDED3006E7C33;
+			remoteInfo = ConnectaApp;
+		};
+		10750A1A1BCDCFD100D7BC4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1057A7101B4C5A0E006E7C33;
+			remoteInfo = MASConnecta;
+		};
+		10750A1C1BCDCFD100D7BC4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1057A71B1B4C5A0E006E7C33;
+			remoteInfo = MASConnectaTests;
+		};
+		10750A1E1BCDCFDA00D7BC4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1057A70F1B4C5A0E006E7C33;
+			remoteInfo = MASConnecta;
+		};
+		10A321601BFABA50000CE561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1059D3701B61AA3700223267;
+			remoteInfo = MASFoundation;
+		};
+		10A321621BFABA50000CE561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1059D37B1B61AA3800223267;
+			remoteInfo = MASFoundationTests;
+		};
+		10A321641BFABA5B000CE561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1059D36F1B61AA3700223267;
+			remoteInfo = MASFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10C016BF1BD5840E00E26B8F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				10A321661BFABA67000CE561 /* MASFoundation.framework in Embed Frameworks */,
+				10C016DB1BD6FD3600E26B8F /* MASConnecta.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		101E35BF1B7102CB0088C0B3 /* msso_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msso_config.json; sourceTree = "<group>"; };
+		1057AF5B1B4EDED3006E7C33 /* ConnectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1057AF5F1B4EDED3006E7C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1057AF601B4EDED3006E7C33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1057AF621B4EDED3006E7C33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1057AF631B4EDED3006E7C33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1057AF6B1B4EDED4006E7C33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1057AF6E1B4EDED4006E7C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1057AF741B4EDED4006E7C33 /* ConnectaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1057AF791B4EDED4006E7C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1057AF7A1B4EDED4006E7C33 /* ConnectaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectaAppTests.m; sourceTree = "<group>"; };
+		1057AF911B4EDFAF006E7C33 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1057AF921B4EDFAF006E7C33 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1057AF961B4EDFBC006E7C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		106157C51B598ED5002E12FF /* SANLU06mac843.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SANLU06mac843.crt; sourceTree = "<group>"; };
+		106157C61B598ED5002E12FF /* SANLU06mac843.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SANLU06mac843.key; sourceTree = "<group>"; };
+		10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASConnecta.xcodeproj; path = ../MASConnecta.xcodeproj; sourceTree = "<group>"; };
+		10750A4C1BCDE2B600D7BC4F /* ServerCertificate.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ServerCertificate.crt; sourceTree = "<group>"; };
+		10750A4E1BCDE5F700D7BC4F /* MagServerCert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagServerCert.crt; sourceTree = "<group>"; };
+		10A321561BFAAA93000CE561 /* MASFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MASFoundation.framework; path = /Users/SANLU06/Projects/iOS_SDK/MASConnecta/ConnectaApp/MASFoundation.framework; sourceTree = "<absolute>"; };
+		10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASFoundation.xcodeproj; path = ../../MASFoundation/MASFoundation.xcodeproj; sourceTree = "<group>"; };
+		10C016C01BD5940E00E26B8F /* SignedCertificate.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = SignedCertificate.crt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1057AF581B4EDED3006E7C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10750A201BCDCFDF00D7BC4F /* MASConnecta.framework in Frameworks */,
+				10A321571BFAAA93000CE561 /* MASFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1057AF711B4EDED4006E7C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1057AF521B4EDED3006E7C33 = {
+			isa = PBXGroup;
+			children = (
+				10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */,
+				10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */,
+				1057AF5D1B4EDED3006E7C33 /* ConnectaApp */,
+				1057AF771B4EDED4006E7C33 /* ConnectaAppTests */,
+				1057AF5C1B4EDED3006E7C33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1057AF5C1B4EDED3006E7C33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1057AF5B1B4EDED3006E7C33 /* ConnectaApp.app */,
+				1057AF741B4EDED4006E7C33 /* ConnectaAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1057AF5D1B4EDED3006E7C33 /* ConnectaApp */ = {
+			isa = PBXGroup;
+			children = (
+				1057AF621B4EDED3006E7C33 /* AppDelegate.h */,
+				1057AF631B4EDED3006E7C33 /* AppDelegate.m */,
+				10750A4E1BCDE5F700D7BC4F /* MagServerCert.crt */,
+				10750A4C1BCDE2B600D7BC4F /* ServerCertificate.crt */,
+				106157C51B598ED5002E12FF /* SANLU06mac843.crt */,
+				106157C61B598ED5002E12FF /* SANLU06mac843.key */,
+				101E35BF1B7102CB0088C0B3 /* msso_config.json */,
+				10C016C01BD5940E00E26B8F /* SignedCertificate.crt */,
+				1057AF911B4EDFAF006E7C33 /* ViewController.h */,
+				1057AF921B4EDFAF006E7C33 /* ViewController.m */,
+				1057AF6B1B4EDED4006E7C33 /* Images.xcassets */,
+				1057AF6D1B4EDED4006E7C33 /* LaunchScreen.xib */,
+				1057AF951B4EDFBC006E7C33 /* Main.storyboard */,
+				1057AF5E1B4EDED3006E7C33 /* Supporting Files */,
+			);
+			path = ConnectaApp;
+			sourceTree = "<group>";
+		};
+		1057AF5E1B4EDED3006E7C33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1057AF5F1B4EDED3006E7C33 /* Info.plist */,
+				1057AF601B4EDED3006E7C33 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1057AF771B4EDED4006E7C33 /* ConnectaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				1057AF7A1B4EDED4006E7C33 /* ConnectaAppTests.m */,
+				1057AF781B4EDED4006E7C33 /* Supporting Files */,
+			);
+			path = ConnectaAppTests;
+			sourceTree = "<group>";
+		};
+		1057AF781B4EDED4006E7C33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1057AF791B4EDED4006E7C33 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10750A151BCDCFD100D7BC4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */,
+				10750A1D1BCDCFD100D7BC4F /* MASConnectaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10A3215B1BFABA50000CE561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10A321611BFABA50000CE561 /* MASFoundation.framework */,
+				10A321631BFABA50000CE561 /* MASFoundationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1057AF5A1B4EDED3006E7C33 /* ConnectaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1057AF7E1B4EDED4006E7C33 /* Build configuration list for PBXNativeTarget "ConnectaApp" */;
+			buildPhases = (
+				1057AF571B4EDED3006E7C33 /* Sources */,
+				1057AF581B4EDED3006E7C33 /* Frameworks */,
+				1057AF591B4EDED3006E7C33 /* Resources */,
+				10C016BF1BD5840E00E26B8F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10A321651BFABA5B000CE561 /* PBXTargetDependency */,
+				10750A1F1BCDCFDA00D7BC4F /* PBXTargetDependency */,
+			);
+			name = ConnectaApp;
+			productName = ConnectaApp;
+			productReference = 1057AF5B1B4EDED3006E7C33 /* ConnectaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1057AF731B4EDED4006E7C33 /* ConnectaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1057AF811B4EDED4006E7C33 /* Build configuration list for PBXNativeTarget "ConnectaAppTests" */;
+			buildPhases = (
+				1057AF701B4EDED4006E7C33 /* Sources */,
+				1057AF711B4EDED4006E7C33 /* Frameworks */,
+				1057AF721B4EDED4006E7C33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1057AF761B4EDED4006E7C33 /* PBXTargetDependency */,
+			);
+			name = ConnectaAppTests;
+			productName = ConnectaAppTests;
+			productReference = 1057AF741B4EDED4006E7C33 /* ConnectaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1057AF531B4EDED3006E7C33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "CA Technologies";
+				TargetAttributes = {
+					1057AF5A1B4EDED3006E7C33 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = RAKRWMN9VH;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
+					1057AF731B4EDED4006E7C33 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 1057AF5A1B4EDED3006E7C33;
+					};
+				};
+			};
+			buildConfigurationList = 1057AF561B4EDED3006E7C33 /* Build configuration list for PBXProject "ConnectaApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1057AF521B4EDED3006E7C33;
+			productRefGroup = 1057AF5C1B4EDED3006E7C33 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 10750A151BCDCFD100D7BC4F /* Products */;
+					ProjectRef = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
+				},
+				{
+					ProductGroup = 10A3215B1BFABA50000CE561 /* Products */;
+					ProjectRef = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1057AF5A1B4EDED3006E7C33 /* ConnectaApp */,
+				1057AF731B4EDED4006E7C33 /* ConnectaAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MASConnecta.framework;
+			remoteRef = 10750A1A1BCDCFD100D7BC4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10750A1D1BCDCFD100D7BC4F /* MASConnectaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MASConnectaTests.xctest;
+			remoteRef = 10750A1C1BCDCFD100D7BC4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10A321611BFABA50000CE561 /* MASFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MASFoundation.framework;
+			remoteRef = 10A321601BFABA50000CE561 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10A321631BFABA50000CE561 /* MASFoundationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MASFoundationTests.xctest;
+			remoteRef = 10A321621BFABA50000CE561 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1057AF591B4EDED3006E7C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				106157C81B598ED5002E12FF /* SANLU06mac843.key in Resources */,
+				106157C71B598ED5002E12FF /* SANLU06mac843.crt in Resources */,
+				10750A4F1BCDE5F700D7BC4F /* MagServerCert.crt in Resources */,
+				101E35C01B7102CB0088C0B3 /* msso_config.json in Resources */,
+				1057AF6F1B4EDED4006E7C33 /* LaunchScreen.xib in Resources */,
+				1057AF6C1B4EDED4006E7C33 /* Images.xcassets in Resources */,
+				10750A4D1BCDE2B600D7BC4F /* ServerCertificate.crt in Resources */,
+				1057AF971B4EDFBC006E7C33 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1057AF721B4EDED4006E7C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1057AF571B4EDED3006E7C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1057AF941B4EDFAF006E7C33 /* ViewController.m in Sources */,
+				1057AF641B4EDED3006E7C33 /* AppDelegate.m in Sources */,
+				1057AF611B4EDED3006E7C33 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1057AF701B4EDED4006E7C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1057AF7B1B4EDED4006E7C33 /* ConnectaAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1057AF761B4EDED4006E7C33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1057AF5A1B4EDED3006E7C33 /* ConnectaApp */;
+			targetProxy = 1057AF751B4EDED4006E7C33 /* PBXContainerItemProxy */;
+		};
+		10750A1F1BCDCFDA00D7BC4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASConnecta;
+			targetProxy = 10750A1E1BCDCFDA00D7BC4F /* PBXContainerItemProxy */;
+		};
+		10A321651BFABA5B000CE561 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASFoundation;
+			targetProxy = 10A321641BFABA5B000CE561 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1057AF6D1B4EDED4006E7C33 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1057AF6E1B4EDED4006E7C33 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		1057AF951B4EDFBC006E7C33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1057AF961B4EDFBC006E7C33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1057AF7C1B4EDED4006E7C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1057AF7D1B4EDED4006E7C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1057AF7F1B4EDED4006E7C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/SANLU06/Projects/iOS_SDK/MASFoundation,
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ConnectaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1057AF801B4EDED4006E7C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/SANLU06/Projects/iOS_SDK/MASFoundation,
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ConnectaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1057AF821B4EDED4006E7C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ConnectaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectaApp.app/ConnectaApp";
+			};
+			name = Debug;
+		};
+		1057AF831B4EDED4006E7C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ConnectaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectaApp.app/ConnectaApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1057AF561B4EDED3006E7C33 /* Build configuration list for PBXProject "ConnectaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1057AF7C1B4EDED4006E7C33 /* Debug */,
+				1057AF7D1B4EDED4006E7C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1057AF7E1B4EDED4006E7C33 /* Build configuration list for PBXNativeTarget "ConnectaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1057AF7F1B4EDED4006E7C33 /* Debug */,
+				1057AF801B4EDED4006E7C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1057AF811B4EDED4006E7C33 /* Build configuration list for PBXNativeTarget "ConnectaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1057AF821B4EDED4006E7C33 /* Debug */,
+				1057AF831B4EDED4006E7C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1057AF531B4EDED3006E7C33 /* Project object */;
+}
