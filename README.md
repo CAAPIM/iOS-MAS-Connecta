@@ -40,7 +40,7 @@ of the MIT license. See the [LICENSE][license-link] file for details.
  [docs]: http://mas.ca.com/docs/
  [blog]: http://mas.ca.com/blog/
 
- [releases]: /releases
+ [releases]: ../../releases
  [contributing]: /CONTRIBUTING.md
  [license-link]: /LICENSE
 
