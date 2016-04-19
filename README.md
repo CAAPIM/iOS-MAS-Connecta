@@ -24,10 +24,6 @@ To download the latest build, see the [releases][releases] page.
 Contributions are welcome and much appreciated. To learn more, see the [Contribution Guidelines][contributing].
 
 
-## MAS Xcode Template Installer
-
-Please add info here.
-
 ## License
 
 Copyright (c) 2016 CA, Inc.
