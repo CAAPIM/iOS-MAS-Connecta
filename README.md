@@ -4,15 +4,12 @@
 Essential mobile services for enterprises made simple and secure. Extends the power of CA Mobile API Gateway (MAG) to mobile devices.
 For more information about MAS and its features, see [the website][mas.ca.com] and [get started][docs].
 
-## MAS SDK Frameworks
+## MASConnecta Features
 
-The MAS SDK includes the following frameworks:
+The MASConnecta framework comes with the following features:
 
-- MASFoundation
-- MASConnecta
-- MASIdentityManagement
-- MASStorage
-- MASUI
+- Messaging
+- Pub/Sub
 
 ## Get Started
 
