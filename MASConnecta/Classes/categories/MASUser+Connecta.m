@@ -35,14 +35,63 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
 
 # pragma mark - Public methods
 
+- (BOOL)validateParameters:(NSArray *)parameters withError:(NSError **)error
+{
+    for (NSObject *param in parameters) {
+        
+        //Check if any parameter is Nil
+        if (!param) {
+
+            NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
+            *error = [NSError errorWithDomain:kSDKErrorDomain
+                                         code:MASConnectaErrorMessageObjectNotSupported
+                                     userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+            return NO;
+            
+        }else if ([param isKindOfClass:[NSString class]]) {
+            
+            if ([(NSString *)param length] < 1) {
+            
+                NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
+                *error = [NSError errorWithDomain:kSDKErrorDomain
+                                             code:MASConnectaErrorMessageObjectNotSupported
+                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+                
+                return NO;
+            }
+
+        }else if ([param isKindOfClass:[MASObject class]]) {
+            
+            if (![(MASObject *)param objectId]) {
+                
+                NSString *message = NSLocalizedString(@"Invalid recipient parameter", @"Invalid recipient parameter");
+                *error = [NSError errorWithDomain:kSDKErrorDomain
+                                             code:MASConnectaErrorMessageObjectNotSupported
+                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+                
+                return NO;
+            }
+        }
+    }
+    
+    return YES;
+}
+
 - (void)sendMessage:(NSObject *)message
              toUser:(MASUser *)user
          completion:(void (^)(BOOL success, NSError *error))completion;
 {
-    NSParameterAssert(message);
-    NSParameterAssert(user);
-
-    [self sendMessage:message toObject:user onTopic:nil completion:completion];
+    NSError *localizedError = nil;
+    
+    if ([self validateParameters:@[message,user] withError:&localizedError]) {
+        
+        [self sendMessage:message toObject:user onTopic:nil completion:completion];
+        
+    }else if (completion) {
+        
+        completion (NO, localizedError);
+    }
 }
 
 
@@ -51,10 +100,16 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
             onTopic:(NSString *)topic
          completion:(void (^)(BOOL success, NSError *error))completion
 {
-    NSParameterAssert(message);
-    NSParameterAssert(user);
+    NSError *localizedError = nil;
     
-    [self sendMessage:message toObject:user onTopic:topic completion:completion];
+    if ([self validateParameters:@[message,user,topic] withError:&localizedError]) {
+        
+        [self sendMessage:message toObject:user onTopic:topic completion:completion];
+        
+    }else if (completion) {
+        
+        completion (NO, localizedError);
+    }
 }
 
 
@@ -62,10 +117,16 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
             toGroup:(MASGroup *)group
          completion:(void (^)(BOOL success, NSError *error))completion
 {
-    NSParameterAssert(message);
-    NSParameterAssert(group);
+    NSError *localizedError = nil;
     
-    [self sendMessage:message toObject:group onTopic:nil completion:completion];
+    if ([self validateParameters:@[message,group] withError:&localizedError]) {
+        
+        [self sendMessage:message toObject:group onTopic:nil completion:completion];
+        
+    }else if (completion) {
+        
+        completion (NO, localizedError);
+    }
 }
 
 
@@ -73,10 +134,16 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
            toDevice:(MASDevice *)device
          completion:(void (^)(BOOL success, NSError *error))completion
 {
-    NSParameterAssert(message);
-    NSParameterAssert(device);
+    NSError *localizedError = nil;
     
-    [self sendMessage:message toObject:device onTopic:nil completion:completion];
+    if ([self validateParameters:@[message,device] withError:&localizedError]) {
+        
+        [self sendMessage:message toObject:device onTopic:nil completion:completion];
+        
+    }else if (completion) {
+        
+        completion (NO, localizedError);
+    }
 }
 
 
