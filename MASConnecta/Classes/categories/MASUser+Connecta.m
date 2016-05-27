@@ -434,8 +434,6 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
 - (void)startListeningToMesasgesFromGroup:(MASGroup *)group
                                completion:(void (^)(BOOL success, NSError *error))completion
 {
-    NSParameterAssert(group);
-    
     //
     // Validating Recipient User
     //
@@ -463,8 +461,6 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
 - (void)startListeningToMessagesFromDevice:(nonnull MASDevice *)device
                                 completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion
 {
-    NSParameterAssert(device);
-    
     //
     // Validating Recipient User
     //
