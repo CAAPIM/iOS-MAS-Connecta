@@ -165,13 +165,33 @@
     NSString *clientID = [MASApplication currentApplication].identifier;
     NSString *objectID = masObject.objectId;
     
+    /*
+     
+     //
+     //Version 1.0 DEPRECADED
+     //
+
+     /1.0/organization/<organizationID>/client/<clientId>/users/<userID>/custom/<developer_defined_topic> (used)
+     /1.0/organization/<organizationID>/users/<userId>/custom/<developer_defined_topic> (never used)
+    
+     
+     //
+     //Version 2.0
+     //
+    
+     /2.0/client/users/<userId>/custom/<developer_defined_topic> (used at the moment)
+     /2.0/users/<userId>/custom/<developer_defined_topic> (not been used at the moment)
+     /2.0/client/custom/<developer_defined_topic> (used at the moment)
+     /2.0/error
+     
+     */
     
     //
     // MASUser
     //
     if ([masObject isKindOfClass:[MASUser class]]) {
         
-        structuredTopic = [NSString stringWithFormat:@"/%@/organization/%@/client/%@/users/%@/custom/%@",apiVersion,organization,clientID,objectID,topic];
+        structuredTopic = [NSString stringWithFormat:@"/%@/client/users/%@/custom/%@",apiVersion,objectID,topic];
     }
     
     
@@ -180,7 +200,7 @@
     //
     else if ([masObject isKindOfClass:[MASDevice class]]) {
         
-        structuredTopic = [NSString stringWithFormat:@"/%@/organization/%@/client/%@/devices/%@/custom/%@",apiVersion,organization,clientID,objectID,topic];
+        structuredTopic = [NSString stringWithFormat:@"/%@/client/devices/%@/custom/%@",apiVersion,objectID,topic];
     }
     
     
@@ -189,7 +209,7 @@
     //
     else if ([masObject isKindOfClass:[MASApplication class]]) {
         
-        structuredTopic = [NSString stringWithFormat:@"/%@/organization/%@/client/%@/custom/%@",apiVersion,organization,clientID,topic];
+        structuredTopic = [NSString stringWithFormat:@"/%@/client/custom/%@",apiVersion,topic];
     }
 
     //
