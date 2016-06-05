@@ -147,7 +147,7 @@
 
 //
 //Format the topic depending on the object requesting this format
-//Note: This format is compatible only with version 1.0 of the MQTT Policy on the Gateway
+//Note: This format is compatible only with version 2.0 of the MQTT Policy on the Gateway
 //
 + (NSString *)structureTopic:(NSString *)topic forObject:(MASObject *)masObject
 {
@@ -160,13 +160,11 @@
     
     NSString *structuredTopic;
     
-    NSString *apiVersion = topicApiVersion;
-    NSString *organization = [MASConfiguration currentConfiguration].applicationOrganization;
-    NSString *clientID = [MASApplication currentApplication].identifier;
+    NSString *apiVersion = apiTopicVersion;
     NSString *objectID = masObject.objectId;
     
-    /*
-     
+/*   NOTE:
+ 
      //
      //Version 1.0 DEPRECADED
      //
@@ -184,7 +182,7 @@
      /2.0/client/custom/<developer_defined_topic> (used at the moment)
      /2.0/error
      
-     */
+ */
     
     //
     // MASUser
@@ -215,12 +213,12 @@
     //
     // MASGroup
     //
-//    else if ([masObject isKindOfClass:[MASGroup class]]) {
-//        
-//        structuredTopic = [NSString stringWithFormat:@"/%@/organization/%@/client/%@/groups/%@/custom/%@",apiVersion,organization,clientID,objectID,topic];
-//    }
+    else if ([masObject isKindOfClass:[MASGroup class]]) {
+        
+        structuredTopic = [NSString stringWithFormat:@"/%@/client/groups/%@/custom/%@",apiVersion,objectID,topic];
+    }
 
-    return structuredTopic; //[structuredTopic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return structuredTopic;
 }
 
 

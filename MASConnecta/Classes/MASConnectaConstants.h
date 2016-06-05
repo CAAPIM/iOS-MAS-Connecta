@@ -8,6 +8,12 @@
 //  of the MIT license. See the LICENSE file for details.
 //
 
+///--------------------------------------
+/// @name Server API Topic Version
+///--------------------------------------
+
+static NSString *const apiTopicVersion = @"2.0";
+
 
 ///--------------------------------------
 /// @name Enumerations
