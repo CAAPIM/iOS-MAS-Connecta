@@ -1,19 +1,19 @@
-# CA Mobile App Services - iOS SDK
+# MAS Connecta Framework for iOS
 
-## MAS SDK
-Essential mobile services for enterprises made simple and secure. Extends the power of CA Mobile API Gateway (MAG) to mobile devices.
-For more information about MAS and its features, see [the website][mas.ca.com] and [get started][docs].
+## Overview
+MAS Connecta is the core messaging framework for [CA Mobile App Services][mas.ca.com]. 
 
-## MASConnecta Features
+## Features
 
 The MASConnecta framework comes with the following features:
 
-- Messaging
-- Pub/Sub
+- Secure and reliable User to User messaging
+- MQTT client with built-in mutual SSL and OAuth support
 
 ## Get Started
 
 To download the latest build, see the [releases][releases] page.
+For documentation, visit our [developer site][docs].
 
 
 ## How You Can Contribute
