@@ -67,28 +67,6 @@
 #pragma mark - Listen methods (start)
 
 /**
- *  This method Subscribe the current logged user to a specific GroupId
- *
- *  @param group      The group to subscribe to
- *  @param completion Completion block with either the Success or the Error message
- */
-- (void)startListeningToMesasgesFromGroup:(nonnull MASGroup *)group
-                               completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
-
-
-
-/**
- *  This method Subscribe the current logged user to a specific Device
- *
- *  @param device     The Device to subscribe to
- *  @param completion Completion block with either the Success or the Error message
- */
-- (void)startListeningToMessagesFromDevice:(nonnull MASDevice *)device
-                               completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
-
-
-
-/**
  *  This method enables Income Message to the current authenticated user
  *
  *  @param completion Completion block with either the Success or the Error message
@@ -98,28 +76,6 @@
 
 
 #pragma mark - Listen methods (stop)
-
-/**
- *  This method Unsubscribe the user from a specific Group
- *
- *  @param group      The group to unsubscribe to
- *  @param completion Completion block with either the Success or the Error message
- */
-- (void)stopListeningToMessagesFromGroup:(nonnull MASGroup *)group
-                              completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
-
-
-
-/**
- *  This method Unsubscribe the user from a specific Device
- *
- *  @param device     The device to unsubscribe to
- *  @param completion Completion block with either the Success or the Error message
- */
-- (void)stopListeningToMessagesFromDevice:(nonnull MASDevice *)device
-                              completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
-
-
 
 /**
  *  This method disables Income Message to the current authenticated user
