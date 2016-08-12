@@ -64,32 +64,6 @@
          completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
 
 
-
-/**
- *  This method sends a message from the current logged user to a existing Group
- *
- *  @param message    The Message to be sent. Only NSString or MASMessage objects are supported
- *  @param group      The MASGroup object recipient
- *  @param completion The Completion block with either the Success or the Error message
- */
-- (void)sendMessage:(nonnull NSObject *)message
-            toGroup:(nonnull MASGroup *)group
-         completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
-
-
-
-/**
- *  This method sends a message from the current logged user to a existing Device
- *
- *  @param message    The Message to be sent. Only NSString or MASMessage objects are supported
- *  @param device     The MASDevice object
- *  @param completion The Completion block with either the Success or the Error message
- */
-- (void)sendMessage:(nonnull NSObject *)message
-           toDevice:(nonnull MASDevice *)device
-         completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completion;
-
-
 #pragma mark - Listen methods (start)
 
 /**

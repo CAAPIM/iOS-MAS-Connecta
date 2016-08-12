@@ -113,40 +113,6 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
 }
 
 
-- (void)sendMessage:(NSObject *)message
-            toGroup:(MASGroup *)group
-         completion:(void (^)(BOOL success, NSError *error))completion
-{
-    NSError *localizedError = nil;
-    
-    if ([self validateParameters:@[message,group] withError:&localizedError]) {
-        
-        [self sendMessage:message toObject:group onTopic:nil completion:completion];
-        
-    }else if (completion) {
-        
-        completion (NO, localizedError);
-    }
-}
-
-
-- (void)sendMessage:(NSObject *)message
-           toDevice:(MASDevice *)device
-         completion:(void (^)(BOOL success, NSError *error))completion
-{
-    NSError *localizedError = nil;
-    
-    if ([self validateParameters:@[message,device] withError:&localizedError]) {
-        
-        [self sendMessage:message toObject:device onTopic:nil completion:completion];
-        
-    }else if (completion) {
-        
-        completion (NO, localizedError);
-    }
-}
-
-
 #pragma mark - Private methods
 
 - (void)sendMessage:(NSObject *)message
