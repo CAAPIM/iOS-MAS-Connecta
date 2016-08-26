@@ -84,6 +84,21 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
 {
     NSError *localizedError = nil;
     
+    if (!message || !user) {
+        
+        NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
+        localizedError = [NSError errorWithDomain:kSDKErrorDomain
+                                             code:MASConnectaErrorMessageObjectNotSupported
+                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+        
+        if (completion) {
+            
+            completion (NO, localizedError);
+        }
+        
+        return;
+    }
+    
     if ([self validateParameters:@[message,user] withError:&localizedError]) {
         
         [self sendMessage:message toObject:user onTopic:nil completion:completion];
@@ -101,6 +116,21 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
          completion:(void (^)(BOOL success, NSError *error))completion
 {
     NSError *localizedError = nil;
+    
+    if (!message || !user || !topic) {
+        
+        NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
+        localizedError = [NSError errorWithDomain:kSDKErrorDomain
+                                             code:MASConnectaErrorMessageObjectNotSupported
+                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+        
+        if (completion) {
+            
+            completion (NO, localizedError);
+        }
+        
+        return;
+    }
     
     if ([self validateParameters:@[message,user,topic] withError:&localizedError]) {
         
