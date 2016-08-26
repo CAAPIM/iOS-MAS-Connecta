@@ -21,6 +21,7 @@
 # pragma mark - Payload
 
 static NSString *const MASConnectaMessagePayloadKey = @"Payload";
+static NSString *const MASConnectaMessageErrorKey = @"message";
 
 static NSString *const MASConnectaMessagePayloadContentEncodingKey = @"ContentEncoding";
 static NSString *const MASConnectaMessagePayloadContentTypeKey = @"ContentType";

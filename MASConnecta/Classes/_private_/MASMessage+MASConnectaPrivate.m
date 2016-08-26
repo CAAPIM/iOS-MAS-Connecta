@@ -37,8 +37,17 @@
     //
     // Retrieve data
     //
-    NSString *base64String = [json objectForKey:MASConnectaMessagePayloadKey];
-    NSData *payload = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    NSData *payload;
+    if ([[[topic componentsSeparatedByString:@"/"] lastObject] isEqualToString:@"error"]) {
+        
+        NSString *errorMessage = [json objectForKey:MASConnectaMessageErrorKey];
+        payload = [errorMessage dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    else {
+
+        NSString *base64String = [json objectForKey:MASConnectaMessagePayloadKey];
+        payload = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    }
 
     
     //
@@ -68,7 +77,15 @@
     NSString *dateValue = [json objectForKey:MASConnectaMessagePayloadSentTimeKey];
     double timeInMilisInt64 = (double)[dateValue longLongValue]/1000;
     NSDate *sentTime = [NSDate dateWithTimeIntervalSince1970:timeInMilisInt64];
-    MASSenderType senderType = [self masSenderTypeForString:[json objectForKey:MASConnectaMessagePayloadSenderTypeKey]];
+    MASSenderType senderType;
+    if ([[[topic componentsSeparatedByString:@"/"] lastObject] isEqualToString:@"error"]) {
+    
+        senderType = MASSenderTypeUnknown;
+    }
+    else {
+        
+        senderType = [self masSenderTypeForString:[json objectForKey:MASConnectaMessagePayloadSenderTypeKey]];
+    }
 
     
     //
