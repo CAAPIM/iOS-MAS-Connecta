@@ -39,17 +39,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
 {
     for (NSObject *param in parameters) {
         
-        //Check if any parameter is Nil
-        if (!param) {
-
-            NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
-            *error = [NSError errorWithDomain:kSDKErrorDomain
-                                         code:MASConnectaErrorMessageObjectNotSupported
-                                     userInfo:@{ NSLocalizedDescriptionKey : message }];
-
-            return NO;
-            
-        }else if ([param isKindOfClass:[NSString class]]) {
+        if ([param isKindOfClass:[NSString class]]) {
             
             if ([(NSString *)param length] < 1) {
             
