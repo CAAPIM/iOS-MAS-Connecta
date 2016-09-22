@@ -2,10 +2,10 @@
 
 ### Bug fixes
  
-- Fix the bug where the /error topic message to be handle appropriately.
-- Fix the bug where the parameter validation failed to validate nil object.
-- Fix the bug where version number and version string were returning incorrect values.
-- Removing unsupported interfaces in MASUser to send a message to device and group.
+- Fix the bug where the /error topic message to be handle appropriately. [MCT-433]
+- Fix the bug where the parameter validation failed to validate nil object. [MCT-435]
+- Fix the bug where version number and version string were returning incorrect values. [MCT-437]
+- Removing unsupported interfaces in MASUser to send a message to device and group. [MCT-403]
 
 ### New features
 
