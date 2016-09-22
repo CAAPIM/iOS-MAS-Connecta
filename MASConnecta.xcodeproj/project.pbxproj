@@ -303,6 +303,7 @@
 					};
 					1057A71A1B4C5A0E006E7C33 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 2JJZ96P8P5;
 					};
 					1057AF4D1B4EDCFF006E7C33 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -605,6 +606,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2JJZ96P8P5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -631,6 +633,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2JJZ96P8P5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(SDKROOT)/Developer/Library/Frameworks",
