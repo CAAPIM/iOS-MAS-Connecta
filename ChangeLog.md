@@ -2,18 +2,18 @@
 
 ### Bug fixes
  
-- Fix the bug where the /error topic message to be handle appropriately. [MCT-433]
-- Fix the bug where the parameter validation failed to validate nil object. [MCT-435]
-- Fix the bug where version number and version string were returning incorrect values. [MCT-437]
-- Removing unsupported interfaces in MASUser to send a message to device and group. [MCT-403]
+- The /error topic message that was sent from MAG no longer impacts the SDK. [MCT-433]
+- The parameter validation failed to validate nil object. [MCT-435]
+- Version number and version string were returning incorrect values. [MCT-437]
+- Removed unsupported interfaces in MASUser to send a message to device and group. [MCT-403]
 
 ### New features
 
-- 
+None.
 
 ### Deprecated methods
 
-- 
+None. 
 
 
 # Version 1.2.00
