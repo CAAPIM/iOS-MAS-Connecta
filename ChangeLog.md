@@ -4,7 +4,7 @@
  
 - The /error topic message that was sent from MAG no longer impacts the SDK. [MCT-433]
 - The parameter validation failed to validate nil object. [MCT-435]
-- Version number and version string were returning incorrect values. [MCT-437]
+- Version number and version string returend incorrect values. [MCT-437]
 - Removed unsupported interfaces in MASUser to send a message to device and group. [MCT-403]
 
 ### New features
