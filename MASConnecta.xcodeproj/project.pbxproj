@@ -294,7 +294,7 @@
 		1057A7071B4C5A0E006E7C33 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "CA Technologies";
 				TargetAttributes = {
 					1057A70F1B4C5A0E006E7C33 = {
@@ -520,7 +520,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "1.2-CR1";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2JJZ96P8P5;
@@ -562,7 +562,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "1.2-CR1";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2JJZ96P8P5;
