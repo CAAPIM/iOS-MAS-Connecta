@@ -44,9 +44,13 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
             if ([(NSString *)param length] < 1) {
             
                 NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
-                *error = [NSError errorWithDomain:kSDKErrorDomain
-                                             code:MASConnectaErrorMessageObjectNotSupported
-                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+                
+                if (*error != nil)
+                {
+                    *error = [NSError errorWithDomain:kSDKErrorDomain
+                                                 code:MASConnectaErrorMessageObjectNotSupported
+                                             userInfo:@{ NSLocalizedDescriptionKey : message }];
+                }
                 
                 return NO;
             }
@@ -56,9 +60,13 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
             if (![(MASObject *)param objectId]) {
                 
                 NSString *message = NSLocalizedString(@"Invalid recipient parameter", @"Invalid recipient parameter");
-                *error = [NSError errorWithDomain:kSDKErrorDomain
-                                             code:MASConnectaErrorMessageObjectNotSupported
-                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+                
+                if (*error != nil)
+                {
+                    *error = [NSError errorWithDomain:kSDKErrorDomain
+                                                 code:MASConnectaErrorMessageObjectNotSupported
+                                             userInfo:@{ NSLocalizedDescriptionKey : message }];
+                }
                 
                 return NO;
             }
