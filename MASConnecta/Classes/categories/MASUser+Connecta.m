@@ -27,6 +27,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     MASConnectaErrorMessageObjectNotSupported = 104,
     MASConnectaErrorUserInvalidOrNil = 105,
     MASConnectaErrorRecipientInvalidOrNil = 106,
+    MASConnectaErrorUserSessionIsCurrentlyLocked = 108,
 };
 
 
@@ -194,6 +195,22 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         return;
     }
     
+    //
+    // Check if the session is locked
+    //
+    if (self.isSessionLocked)
+    {
+        
+        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
+        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
+                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
+                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+        
+        if (completion) completion(NO,localizedError);
+        
+        return;
+    }
+    
     
     //
     // Validating Recipient User
@@ -310,6 +327,22 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
             code:MASConnectaErrorUserNotAuthenticated
             userInfo:@{ NSLocalizedDescriptionKey : message }];
+        
+        if (completion) completion(NO,localizedError);
+        
+        return;
+    }
+    
+    //
+    // Check if the session is locked
+    //
+    if (self.isSessionLocked)
+    {
+        
+        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
+        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
+                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
+                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
         
         if (completion) completion(NO,localizedError);
         
@@ -467,6 +500,21 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         return;
     }
 
+    //
+    // Check if the session is locked
+    //
+    if (self.isSessionLocked)
+    {
+        
+        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
+        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
+                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
+                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+        
+        if (completion) completion(NO,localizedError);
+        
+        return;
+    }
     
     //
     // Check if topicQueue exist, if not empty the queue
@@ -686,6 +734,21 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         return;
     }
     
+    //
+    // Check if the session is locked
+    //
+    if (self.isSessionLocked)
+    {
+        
+        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
+        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
+                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
+                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+        
+        if (completion) completion(NO,localizedError);
+        
+        return;
+    }
     
     //
     // Subscribe to a Topic
