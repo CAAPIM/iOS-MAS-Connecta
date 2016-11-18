@@ -51,6 +51,7 @@
             //
         case MASConnectaErrorMessageObjectNotSupported: return @"";
         case MASConnectaErrorRecipientInvalidOrNil: return @"";
+        case MASConnectaErrorParameterInvalidOrNil: return NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
             
             //
             // User

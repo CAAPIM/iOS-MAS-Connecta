@@ -34,6 +34,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     //
     MASConnectaErrorMessageObjectNotSupported = 500001,
     MASConnectaErrorRecipientInvalidOrNil = 500002,
+    MASConnectaErrorParameterInvalidOrNil = 500003,
+    
     
     //
     // User
