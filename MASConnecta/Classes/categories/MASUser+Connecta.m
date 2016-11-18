@@ -13,22 +13,8 @@
 #import <objc/runtime.h> //Used for the dynamic getter and setter inside a Category.
 #import "MASConnectaConstantsPrivate.h"
 
-#define kSDKErrorDomain     @"com.ca.MASConnecta:ErrorDomain"
-
 static void *messageQueuePropertyKey;
 static void *topicQueuePropertyKey;
-
-
-typedef NS_ENUM (NSUInteger, MASConnectaError)
-{
-    MASConnectaErrorUserNotAuthenticated = 101,
-    MASConnectaErrorConnectingMQTT = 102,
-    MASConnectaErrorSubscribingMQTT = 103,
-    MASConnectaErrorMessageObjectNotSupported = 104,
-    MASConnectaErrorUserInvalidOrNil = 105,
-    MASConnectaErrorRecipientInvalidOrNil = 106,
-    MASConnectaErrorUserSessionIsCurrentlyLocked = 108,
-};
 
 
 @implementation MASUser (Connecta)

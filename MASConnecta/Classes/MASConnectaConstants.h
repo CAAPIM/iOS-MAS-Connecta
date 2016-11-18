@@ -16,6 +16,38 @@ static NSString *const apiTopicVersion = @"2.0";
 
 
 ///--------------------------------------
+/// @name Error
+///--------------------------------------
+
+# pragma mark - Error
+
+typedef NS_ENUM (NSUInteger, MASConnectaError)
+{
+    //
+    // MQTT
+    //
+    MASConnectaErrorConnectingMQTT = 511001,
+    MASConnectaErrorSubscribingMQTT = 511002,
+    
+    //
+    // Validation
+    //
+    MASConnectaErrorMessageObjectNotSupported = 500001,
+    MASConnectaErrorRecipientInvalidOrNil = 500002,
+    
+    //
+    // User
+    //
+    MASConnectaErrorUserInvalidOrNil = 530003,
+    MASConnectaErrorUserNotAuthenticated = 530004,
+    MASConnectaErrorUserSessionIsCurrentlyLocked = 530008,
+};
+
+
+#define kSDKErrorDomain     @"com.ca.MASConnecta:ErrorDomain"
+
+
+///--------------------------------------
 /// @name Enumerations
 ///--------------------------------------
 
