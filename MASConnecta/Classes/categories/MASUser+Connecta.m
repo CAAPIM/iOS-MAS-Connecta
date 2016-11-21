@@ -517,11 +517,7 @@ static void *topicQueuePropertyKey;
                             //
                             // Failure
                             //
-                            NSString *message = NSLocalizedString(@"Error Subscribing to Topic", @"Error Subscribing to topic");
-                            NSString *fullMessage = [NSString stringWithFormat:@"%@: %@",message,grantedQos];
-                            NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                code:MASConnectaErrorSubscribingMQTT
-                                userInfo:@{NSLocalizedDescriptionKey : fullMessage}];
+                            NSError *localizedError = [NSError errorForConnectaMQTTSubscriptionWithQoS:grantedQos];
                             
                             //
                             // Notify
@@ -590,11 +586,7 @@ static void *topicQueuePropertyKey;
                     //
                     // Failure
                     //
-                    NSString *message = NSLocalizedString(@"Error Subscribing to Topic", @"Error Subscribing to topic");
-                    NSString *fullMessage = [NSString stringWithFormat:@"%@: %@",message,grantedQos];
-                    NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                        code:MASConnectaErrorSubscribingMQTT
-                        userInfo:@{ NSLocalizedDescriptionKey : fullMessage }];
+                    NSError *localizedError = [NSError errorForConnectaMQTTSubscriptionWithQoS:grantedQos];
                     
                     //
                     // Notify

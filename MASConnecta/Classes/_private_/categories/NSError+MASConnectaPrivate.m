@@ -33,6 +33,18 @@
 }
 
 
++ (NSError *)errorForConnectaMQTTSubscriptionWithQoS:(NSArray *)qos
+{
+    //
+    // Standard error key/values
+    //
+    NSMutableDictionary *errorInfo = [NSMutableDictionary new];
+    errorInfo[NSLocalizedDescriptionKey] = [NSString stringWithFormat:[self descriptionForConnectaErrorCode:MASConnectaErrorSubscribingMQTT], qos];
+    
+    return [NSError errorWithDomain:kSDKErrorDomain code:MASConnectaErrorSubscribingMQTT userInfo:errorInfo];
+}
+
+
 + (NSString *)descriptionForConnectaErrorCode:(MASConnectaError)errorCode
 {
     //
@@ -44,7 +56,7 @@
             // MQTT
             //
         case MASConnectaErrorConnectingMQTT: return NSLocalizedString(@"Connection Failed with MQTT Server", @"Connection Failed with MQTT Server");
-        case MASConnectaErrorSubscribingMQTT: return NSLocalizedString(@"Error Subscribing to Topic", @"Error Subscribing to topic");
+        case MASConnectaErrorSubscribingMQTT: return NSLocalizedString(@"Error Subscribing to Topic: %@", @"Error Subscribing to topic: %@");
             
             //
             // Validation

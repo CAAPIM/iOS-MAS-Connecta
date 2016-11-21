@@ -47,4 +47,16 @@
  */
 + (NSError *)errorForConnectaErrorCode:(MASConnectaError)errorCode info:(NSDictionary *)info errorDomain:(NSString *)errorDomain;
 
+
+
+/**
+ * Creats an NSError for MASConnectaErrorSubscribingMQTT.  The error will fall under the kSDKErrorDomain constant.
+ * 
+ * The error NSLocalizedDescriptionKey will be constructed with pre-defined error message and QoS parameter.
+ *
+ * @param qos The NSArray of granted QoS.
+ * @returns Returns the NSError instance.
+ */
++ (NSError *)errorForConnectaMQTTSubscriptionWithQoS:(NSArray *)qos;
+
 @end
