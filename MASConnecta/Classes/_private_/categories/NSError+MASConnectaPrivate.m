@@ -61,8 +61,8 @@
             //
             // Validation
             //
-        case MASConnectaErrorMessageObjectNotSupported: return @"";
-        case MASConnectaErrorRecipientInvalidOrNil: return @"";
+        case MASConnectaErrorMessageObjectNotSupported: return NSLocalizedString(@"Message object is not supported", @"Message object is not supported");
+        case MASConnectaErrorRecipientInvalidOrNil: return NSLocalizedString(@"The recipient cannot be invalid or nil", @"The recipient cannot be invalid or nil");
         case MASConnectaErrorParameterInvalidOrNil: return NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
             
             //
