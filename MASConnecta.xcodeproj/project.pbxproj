@@ -32,10 +32,12 @@
 		A4B0C53F1C8AB4B9004F92DF /* MASUser+Connecta.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B0C53D1C8AB4B9004F92DF /* MASUser+Connecta.m */; };
 		A4B0C5421C8AB4CF004F92DF /* NSString+MASConnecta.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B0C5401C8AB4CF004F92DF /* NSString+MASConnecta.h */; };
 		A4B0C5431C8AB4CF004F92DF /* NSString+MASConnecta.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B0C5411C8AB4CF004F92DF /* NSString+MASConnecta.m */; };
-		A4B0C55E1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B0C55C1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.h */; };
-		A4B0C55F1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B0C55D1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.m */; };
 		A4B0C5771C8AD71E004F92DF /* MASConnectaService.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B0C5751C8AD71E004F92DF /* MASConnectaService.h */; };
 		A4B0C5781C8AD71E004F92DF /* MASConnectaService.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B0C5761C8AD71E004F92DF /* MASConnectaService.m */; };
+		CB2922BF1DDE7937008651FD /* MASMessage+MASConnectaPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2922BD1DDE7937008651FD /* MASMessage+MASConnectaPrivate.h */; };
+		CB2922C01DDE7937008651FD /* MASMessage+MASConnectaPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2922BE1DDE7937008651FD /* MASMessage+MASConnectaPrivate.m */; };
+		CB2922C31DDE794B008651FD /* NSError+MASConnectaPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2922C11DDE794B008651FD /* NSError+MASConnectaPrivate.h */; };
+		CB2922C41DDE794B008651FD /* NSError+MASConnectaPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2922C21DDE794B008651FD /* NSError+MASConnectaPrivate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,11 +103,13 @@
 		A4B0C53D1C8AB4B9004F92DF /* MASUser+Connecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASUser+Connecta.m"; sourceTree = "<group>"; };
 		A4B0C5401C8AB4CF004F92DF /* NSString+MASConnecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MASConnecta.h"; sourceTree = "<group>"; };
 		A4B0C5411C8AB4CF004F92DF /* NSString+MASConnecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MASConnecta.m"; sourceTree = "<group>"; };
-		A4B0C55C1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASMessage+MASConnectaPrivate.h"; sourceTree = "<group>"; };
-		A4B0C55D1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASMessage+MASConnectaPrivate.m"; sourceTree = "<group>"; };
 		A4B0C5751C8AD71E004F92DF /* MASConnectaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConnectaService.h; sourceTree = "<group>"; };
 		A4B0C5761C8AD71E004F92DF /* MASConnectaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConnectaService.m; sourceTree = "<group>"; };
 		A4B0C5B01C8B6A71004F92DF /* MASConnectaConstantsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASConnectaConstantsPrivate.h; sourceTree = "<group>"; };
+		CB2922BD1DDE7937008651FD /* MASMessage+MASConnectaPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASMessage+MASConnectaPrivate.h"; sourceTree = "<group>"; };
+		CB2922BE1DDE7937008651FD /* MASMessage+MASConnectaPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASMessage+MASConnectaPrivate.m"; sourceTree = "<group>"; };
+		CB2922C11DDE794B008651FD /* NSError+MASConnectaPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MASConnectaPrivate.h"; sourceTree = "<group>"; };
+		CB2922C21DDE794B008651FD /* NSError+MASConnectaPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MASConnectaPrivate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,13 +225,23 @@
 		A4B0C5591C8ACCEB004F92DF /* _private_ */ = {
 			isa = PBXGroup;
 			children = (
+				CB2922BC1DDE7937008651FD /* categories */,
 				A4B0C5B01C8B6A71004F92DF /* MASConnectaConstantsPrivate.h */,
 				A4B0C5751C8AD71E004F92DF /* MASConnectaService.h */,
 				A4B0C5761C8AD71E004F92DF /* MASConnectaService.m */,
-				A4B0C55C1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.h */,
-				A4B0C55D1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.m */,
 			);
 			path = _private_;
+			sourceTree = "<group>";
+		};
+		CB2922BC1DDE7937008651FD /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				CB2922BD1DDE7937008651FD /* MASMessage+MASConnectaPrivate.h */,
+				CB2922BE1DDE7937008651FD /* MASMessage+MASConnectaPrivate.m */,
+				CB2922C11DDE794B008651FD /* NSError+MASConnectaPrivate.h */,
+				CB2922C21DDE794B008651FD /* NSError+MASConnectaPrivate.m */,
+			);
+			path = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,11 +253,12 @@
 			files = (
 				A4B0C5331C8AB37B004F92DF /* MASConnecta.h in Headers */,
 				A4B0C52D1C8AB343004F92DF /* MASConnectaConstants.h in Headers */,
+				CB2922BF1DDE7937008651FD /* MASMessage+MASConnectaPrivate.h in Headers */,
 				A4B0C52E1C8AB343004F92DF /* MASMessage.h in Headers */,
 				A4B0C5771C8AD71E004F92DF /* MASConnectaService.h in Headers */,
-				A4B0C55E1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.h in Headers */,
 				A4B0C53E1C8AB4B9004F92DF /* MASUser+Connecta.h in Headers */,
 				A4B0C5421C8AB4CF004F92DF /* NSString+MASConnecta.h in Headers */,
+				CB2922C31DDE794B008651FD /* NSError+MASConnectaPrivate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +407,8 @@
 			files = (
 				A4B0C5431C8AB4CF004F92DF /* NSString+MASConnecta.m in Sources */,
 				A4B0C53F1C8AB4B9004F92DF /* MASUser+Connecta.m in Sources */,
-				A4B0C55F1C8ACD39004F92DF /* MASMessage+MASConnectaPrivate.m in Sources */,
+				CB2922C41DDE794B008651FD /* NSError+MASConnectaPrivate.m in Sources */,
+				CB2922C01DDE7937008651FD /* MASMessage+MASConnectaPrivate.m in Sources */,
 				A4B0C52F1C8AB343004F92DF /* MASMessage.m in Sources */,
 				A4B0C5781C8AD71E004F92DF /* MASConnectaService.m in Sources */,
 			);

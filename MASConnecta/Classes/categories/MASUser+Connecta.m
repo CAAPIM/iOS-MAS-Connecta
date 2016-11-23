@@ -12,23 +12,10 @@
 
 #import <objc/runtime.h> //Used for the dynamic getter and setter inside a Category.
 #import "MASConnectaConstantsPrivate.h"
-
-#define kSDKErrorDomain     @"com.ca.MASConnecta:ErrorDomain"
+#import "NSError+MASConnectaPrivate.h"
 
 static void *messageQueuePropertyKey;
 static void *topicQueuePropertyKey;
-
-
-typedef NS_ENUM (NSUInteger, MASConnectaError)
-{
-    MASConnectaErrorUserNotAuthenticated = 101,
-    MASConnectaErrorConnectingMQTT = 102,
-    MASConnectaErrorSubscribingMQTT = 103,
-    MASConnectaErrorMessageObjectNotSupported = 104,
-    MASConnectaErrorUserInvalidOrNil = 105,
-    MASConnectaErrorRecipientInvalidOrNil = 106,
-    MASConnectaErrorUserSessionIsCurrentlyLocked = 108,
-};
 
 
 @implementation MASUser (Connecta)
@@ -43,14 +30,10 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         if ([param isKindOfClass:[NSString class]]) {
             
             if ([(NSString *)param length] < 1) {
-            
-                NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
-                
+               
                 if (*error != nil)
                 {
-                    *error = [NSError errorWithDomain:kSDKErrorDomain
-                                                 code:MASConnectaErrorMessageObjectNotSupported
-                                             userInfo:@{ NSLocalizedDescriptionKey : message }];
+                    *error = [NSError errorForConnectaErrorCode:MASConnectaErrorParameterInvalidOrNil errorDomain:kSDKErrorDomain];
                 }
                 
                 return NO;
@@ -60,13 +43,9 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
             
             if (![(MASObject *)param objectId]) {
                 
-                NSString *message = NSLocalizedString(@"Invalid recipient parameter", @"Invalid recipient parameter");
-                
                 if (*error != nil)
                 {
-                    *error = [NSError errorWithDomain:kSDKErrorDomain
-                                                 code:MASConnectaErrorMessageObjectNotSupported
-                                             userInfo:@{ NSLocalizedDescriptionKey : message }];
+                    *error = [NSError errorForConnectaErrorCode:MASConnectaErrorRecipientInvalidOrNil errorDomain:kSDKErrorDomain];
                 }
                 
                 return NO;
@@ -85,10 +64,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     
     if (!message || !user) {
         
-        NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
-        localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                             code:MASConnectaErrorMessageObjectNotSupported
-                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+        localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorParameterInvalidOrNil errorDomain:kSDKErrorDomain];
         
         if (completion) {
             
@@ -118,10 +94,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     
     if (!message || !user || !topic) {
         
-        NSString *message = NSLocalizedString(@"Parameter cannot be empty or nil", @"Parameter cannot be empty or nil");
-        localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                             code:MASConnectaErrorMessageObjectNotSupported
-                                         userInfo:@{ NSLocalizedDescriptionKey : message }];
+        localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorParameterInvalidOrNil errorDomain:kSDKErrorDomain];
         
         if (completion) {
             
@@ -170,10 +143,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     }
     else if (completion) {
         
-        NSString *message = NSLocalizedString(@"Message object not supported", @"Message object not supported");
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorMessageObjectNotSupported
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorMessageObjectNotSupported errorDomain:kSDKErrorDomain];
         
         completion(NO, localizedError);
         
@@ -185,10 +155,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     //
     if (!self.objectId) {
         
-        NSString *message = NSLocalizedString(@"Current user invalid or nil. Please retrieve user data from the server and try again.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserInvalidOrNil
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserInvalidOrNil errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -201,10 +168,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     if (self.isSessionLocked)
     {
         
-        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserSessionIsCurrentlyLocked errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -216,11 +180,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     // Validating Recipient User
     //
     if (!object.objectId) {
-        
-        NSString *message = NSLocalizedString(@"Parameter object invalid or nil. Please retrieve object data from the server and try again..", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorRecipientInvalidOrNil
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorRecipientInvalidOrNil errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -323,10 +284,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     //
     if (!self.isCurrentUser) {
         
-        NSString *message = NSLocalizedString(@"Unauthenticated user", @"unauthenticated user");
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-            code:MASConnectaErrorUserNotAuthenticated
-            userInfo:@{ NSLocalizedDescriptionKey : message }];
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserNotAuthenticated errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -338,11 +296,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     //
     if (self.isSessionLocked)
     {
-        
-        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserSessionIsCurrentlyLocked errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -416,11 +371,9 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
             {
                 // Connection failured but mosquitto will automatically reconnect
                 DLog(@"Connection Failed with MQTT Server");
-                 
-                NSString *message = NSLocalizedString(@"Connection Failed with MQTT Server", @"Connection Failed with MQTT Server");
-                NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                    code:MASConnectaErrorConnectingMQTT
-                    userInfo:@{ NSLocalizedDescriptionKey : message }];
+                
+                NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorConnectingMQTT errorDomain:kSDKErrorDomain];
+                
                 
                 //
                 // Notify
@@ -471,10 +424,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         //
         // Error
         //
-        NSString *message = NSLocalizedString(@"Unauthenticated user", @"unauthenticated user");
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-            code:MASConnectaErrorUserNotAuthenticated
-            userInfo:@{ NSLocalizedDescriptionKey : message }];
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserNotAuthenticated errorDomain:kSDKErrorDomain];
         
         //
         // Notify
@@ -489,11 +439,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     // Validating Sender User (CurrentUser)
     //
     if (!self.objectId) {
-        
-        NSString *message = NSLocalizedString(@"Current user invalid or nil. Please retrieve user data from the server and try again.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserInvalidOrNil
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserInvalidOrNil errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -505,11 +452,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     //
     if (self.isSessionLocked)
     {
-        
-        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserSessionIsCurrentlyLocked errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -573,11 +517,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
                             //
                             // Failure
                             //
-                            NSString *message = NSLocalizedString(@"Error Subscribing to Topic", @"Error Subscribing to topic");
-                            NSString *fullMessage = [NSString stringWithFormat:@"%@: %@",message,grantedQos];
-                            NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                code:MASConnectaErrorSubscribingMQTT
-                                userInfo:@{NSLocalizedDescriptionKey : fullMessage}];
+                            NSError *localizedError = [NSError errorForConnectaMQTTSubscriptionWithQoS:grantedQos];
                             
                             //
                             // Notify
@@ -610,10 +550,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
                 //
                 DLog(@"Connection Failed with MQTT Server");
                 
-                NSString *message = NSLocalizedString(@"Connection Failed with MQTT Server", @"Connection Failed with MQTT Server");
-                NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                    code:MASConnectaErrorConnectingMQTT
-                    userInfo:@{NSLocalizedDescriptionKey : message}];
+                NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorConnectingMQTT errorDomain:kSDKErrorDomain];
                 
                 //
                 // Notify
@@ -649,11 +586,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
                     //
                     // Failure
                     //
-                    NSString *message = NSLocalizedString(@"Error Subscribing to Topic", @"Error Subscribing to topic");
-                    NSString *fullMessage = [NSString stringWithFormat:@"%@: %@",message,grantedQos];
-                    NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                        code:MASConnectaErrorSubscribingMQTT
-                        userInfo:@{ NSLocalizedDescriptionKey : fullMessage }];
+                    NSError *localizedError = [NSError errorForConnectaMQTTSubscriptionWithQoS:grantedQos];
                     
                     //
                     // Notify
@@ -705,10 +638,7 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
         //
         // Error
         //
-        NSString *message = NSLocalizedString(@"Unauthenticated user", @"unauthenticated user");
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-            code:MASConnectaErrorUserNotAuthenticated
-            userInfo:@{ NSLocalizedDescriptionKey : message }];
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserNotAuthenticated errorDomain:kSDKErrorDomain];
         
         //
         // Notify
@@ -723,11 +653,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     // Validating Sender User (CurrentUser)
     //
     if (!self.objectId) {
-        
-        NSString *message = NSLocalizedString(@"Current user invalid or nil. Please retrieve user data from the server and try again.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserInvalidOrNil
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserInvalidOrNil errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
@@ -739,11 +666,8 @@ typedef NS_ENUM (NSUInteger, MASConnectaError)
     //
     if (self.isSessionLocked)
     {
-        
-        NSString *message = NSLocalizedString(@"User session is currently locked.", nil);
-        NSError *localizedError = [NSError errorWithDomain:kSDKErrorDomain
-                                                      code:MASConnectaErrorUserSessionIsCurrentlyLocked
-                                                  userInfo:@{ NSLocalizedDescriptionKey : message }];
+
+        NSError *localizedError = [NSError errorForConnectaErrorCode:MASConnectaErrorUserSessionIsCurrentlyLocked errorDomain:kSDKErrorDomain];
         
         if (completion) completion(NO,localizedError);
         
