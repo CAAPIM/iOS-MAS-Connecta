@@ -31,7 +31,7 @@ static void *topicQueuePropertyKey;
             
             if ([(NSString *)param length] < 1) {
                
-                if (*error != nil)
+                if (error)
                 {
                     *error = [NSError errorForConnectaErrorCode:MASConnectaErrorParameterInvalidOrNil errorDomain:kSDKErrorDomain];
                 }
@@ -43,7 +43,7 @@ static void *topicQueuePropertyKey;
             
             if (![(MASObject *)param objectId]) {
                 
-                if (*error != nil)
+                if (error)
                 {
                     *error = [NSError errorForConnectaErrorCode:MASConnectaErrorRecipientInvalidOrNil errorDomain:kSDKErrorDomain];
                 }
