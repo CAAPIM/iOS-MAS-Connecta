@@ -1,3 +1,11 @@
+# Version 1.3
+
+### Bug fixes
+- Fixed a bug where MASConnecta framework fails to parse the message payload that is not JSON format. [DE255873]
+- Removed NSAssertion to validate parameters and replaced with proper NSError return. [US263636]
+
+### New features
+
 # Version 1.2.00-CR1
 
 ### Bug fixes
