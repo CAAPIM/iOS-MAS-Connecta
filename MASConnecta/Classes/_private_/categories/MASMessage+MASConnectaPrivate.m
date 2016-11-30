@@ -26,7 +26,7 @@
     //
     // Getting only the message from the payload structure
     //
-    id json = [NSJSONSerialization JSONObjectWithData:mqttMessage.payload options:0 error:nil];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:mqttMessage.payload options:0 error:nil];
     
     //
     // Topic
@@ -43,10 +43,14 @@
         NSString *errorMessage = [json objectForKey:MASConnectaMessageErrorKey];
         payload = [errorMessage dataUsingEncoding:NSUTF8StringEncoding];
     }
-    else {
+    else if (json && [json.allKeys containsObject:MASConnectaMessagePayloadKey]) {
 
         NSString *base64String = [json objectForKey:MASConnectaMessagePayloadKey];
         payload = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    }
+    else {
+        
+        payload = mqttMessage.payload;
     }
 
     
@@ -82,9 +86,13 @@
     
         senderType = MASSenderTypeUnknown;
     }
-    else {
+    else if (json && [json.allKeys containsObject:MASConnectaMessagePayloadSenderTypeKey]){
         
         senderType = [self masSenderTypeForString:[json objectForKey:MASConnectaMessagePayloadSenderTypeKey]];
+    }
+    else {
+        
+        senderType = MASSenderTypeUnknown;
     }
 
     
