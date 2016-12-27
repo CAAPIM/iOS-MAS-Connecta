@@ -133,9 +133,9 @@
     
     if(self)
     {
-        self.payload = payload;
-        self.contentType = contentType;
-        self.version = @"1.0";
+        [self setValue:payload forKey:@"payload"];
+        [self setValue:contentType forKey:@"contentType"];
+        [self setValue:@"1.0" forKey:@"version"];
     }
     
     return self;
@@ -154,17 +154,17 @@
 {
     if(self = [super init])
     {
-        self.payload = payload;
-        self.contentType = contentType;
-        self.contentEncoding = contentEncoding;
-        self.version = version;
-        self.topic = topic;
-        self.receiverObjectId = receiverId;
+        [self setValue:payload forKey:@"payload"];
+        [self setValue:contentType forKey:@"contentType"];
+        [self setValue:contentEncoding forKey:@"contentEncoding"];
+        [self setValue:version forKey:@"version"];
+        [self setValue:topic forKey:@"topic"];
+        [self setValue:receiverId forKey:@"receiverObjectId"];
         
-        self.senderObjectId = senderId;
-        self.senderDisplayName = senderDisplayName;
-        self.senderType = senderType;
-        self.sentTime = sentTime;
+        [self setValue:senderId forKey:@"senderObjectId"];
+        [self setValue:senderDisplayName forKey:@"senderDisplayName"];
+        [self setValue:[NSNumber numberWithInteger:senderType] forKey:@"senderType"];
+        [self setValue:sentTime forKey:@"sentTime"];
     }
     
     return self;
@@ -197,128 +197,4 @@
         object:nil
         userInfo:userInfo];
 }
-
-
-# pragma mark - Properties
-
-- (NSDate *)payload
-{
-    return objc_getAssociatedObject(self, &MASMessagePayloadPropertyKey);
-}
-
-
-- (void)setPayload:(NSData *)payload
-{
-    objc_setAssociatedObject(self, &MASMessagePayloadPropertyKey, payload, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)contentType
-{
-    return objc_getAssociatedObject(self, &MASMessageContentTypePropertyKey);
-}
-
-
-- (void)setContentType:(NSString *)contentType
-{
-    objc_setAssociatedObject(self, &MASMessageContentTypePropertyKey, contentType, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)contentEncoding
-{
-    return objc_getAssociatedObject(self, &MASMessageContentEncodingPropertyKey);
-}
-
-
-- (void)setContentEncoding:(NSString *)contentEncoding
-{
-    objc_setAssociatedObject(self, &MASMessageContentEncodingPropertyKey, contentEncoding, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)version
-{
-    return objc_getAssociatedObject(self, &MASMessageVersionPropertyKey);
-}
-
-
-- (void)setVersion:(NSString *)version
-{
-    objc_setAssociatedObject(self, &MASMessageVersionPropertyKey, version, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)topic
-{
-    return objc_getAssociatedObject(self, &MASMessageTopicPropertyKey);
-}
-
-
-- (void)setTopic:(NSString *)topic
-{
-    objc_setAssociatedObject(self, &MASMessageTopicPropertyKey, topic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)receiverObjectId
-{
-    return objc_getAssociatedObject(self, &MASMessageReceiverObjectIdPropertyKey);
-}
-
-
-- (void)setReceiverObjectId:(NSString *)receiverObjectId
-{
-    objc_setAssociatedObject(self, &MASMessageReceiverObjectIdPropertyKey, receiverObjectId, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSDate *)sentTime
-{
-    return objc_getAssociatedObject(self, &MASMessageSentTimePropertyKey);
-}
-
-
-- (void)setSentTime:(NSDate *)sentTime
-{
-    objc_setAssociatedObject(self, &MASMessageSentTimePropertyKey, sentTime, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)senderObjectId
-{
-    return objc_getAssociatedObject(self, &MASMessageSenderObjectIdPropertyKey);
-}
-
-
-- (void)setSenderObjectId:(NSString *)senderObjectId
-{
-    objc_setAssociatedObject(self, &MASMessageSenderObjectIdPropertyKey, senderObjectId, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)senderDisplayName
-{
-    return objc_getAssociatedObject(self, &MASMessageSenderDisplayNamePropertyKey);
-}
-
-
-- (void)setSenderDisplayName:(NSString *)senderDisplayName
-{
-    objc_setAssociatedObject(self, &MASMessageSenderDisplayNamePropertyKey, senderDisplayName, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (MASSenderType)senderType
-{
-    NSNumber *senderTypeAsNumber = objc_getAssociatedObject(self, &MASMessageSenderTypePropertyKey);
-    return [senderTypeAsNumber intValue];
-}
-
-
-- (void)setSenderType:(MASSenderType)senderType
-{
-    objc_setAssociatedObject(self, &MASMessageSenderTypePropertyKey, [NSNumber numberWithInt:senderType], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 @end

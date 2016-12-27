@@ -83,21 +83,19 @@
     self = [super init];
     if(self)
     {
-        self.contentType = [aDecoder decodeObjectForKey:MASMessageContentTypePropertyKey];
-        self.contentEncoding = [aDecoder decodeObjectForKey:MASMessageContentEncodingPropertyKey];
-        self.payload = [aDecoder decodeObjectForKey:MASMessagePayloadPropertyKey];
-        self.version = [aDecoder decodeObjectForKey:MASMessageVersionPropertyKey];
-        self.topic = [aDecoder decodeObjectForKey:MASMessageTopicPropertyKey];
-
-        self.receiverObjectId = [aDecoder decodeObjectForKey:MASMessageReceiverObjectIdPropertyKey];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageContentTypePropertyKey] forKey:@"contentType"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageContentEncodingPropertyKey] forKey:@"contentEncoding"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessagePayloadPropertyKey] forKey:@"payload"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageVersionPropertyKey] forKey:@"version"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageTopicPropertyKey] forKey:@"topic"];
         
-        self.senderObjectId = [aDecoder decodeObjectForKey:MASMessageSenderObjectIdPropertyKey];
-        self.senderDisplayName = [aDecoder decodeObjectForKey:MASMessageSenderDisplayNamePropertyKey];
-        self.sentTime = [aDecoder decodeObjectForKey:MASMessageSentTimePropertyKey];
-        self.senderType = [aDecoder decodeIntForKey:MASMessageSenderTypePropertyKey];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageReceiverObjectIdPropertyKey] forKey:@"receiverObjectId"];
+        
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageSenderObjectIdPropertyKey] forKey:@"senderObjectId"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageSenderDisplayNamePropertyKey] forKey:@"senderDisplayName"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageSentTimePropertyKey] forKey:@"sentTime"];
+        [self setValue:[aDecoder decodeObjectForKey:MASMessageSenderTypePropertyKey] forKey:@"senderType"];
     }
-    
-    //DLog(@"\n\ncalled and self is: %@\n\n", [self debugDescription]);
     
     return self;
 }

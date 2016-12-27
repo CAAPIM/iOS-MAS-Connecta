@@ -26,20 +26,6 @@ static NSString *const MASMessageTopicPropertyKey = @"topic";
 
 @interface MASMessage (MASConnectaPrivate)
 
-
-# pragma mark - Properties
-
-@property (nonatomic, copy, readwrite) NSString *version;
-@property (nonatomic, copy, readwrite) NSString *topic;
-@property (nonatomic, assign, readwrite) MASSenderType senderType;
-@property (nonatomic, copy, readwrite) NSString *receiverObjectId;
-@property (nonatomic, copy, readwrite) NSString *senderObjectId;
-@property (nonatomic, copy, readwrite) NSString *senderDisplayName;
-@property (nonatomic, copy, readwrite) NSDate *sentTime;
-@property (nonatomic, copy, readwrite) NSData *payload;
-@property (nonatomic, copy, readwrite) NSString *contentType;
-@property (nonatomic, copy, readwrite) NSString *contentEncoding;
-
 # pragma mark - Message
 
 + (MASMessage *)messageFromMQTTMessage:(MASMQTTMessage *)mqttMessage;
