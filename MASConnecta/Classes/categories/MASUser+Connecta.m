@@ -618,6 +618,10 @@ static void *topicQueuePropertyKey;
     // Applying format to Topic and Message
     //
     NSString *formattedTopic = [NSString structureTopic:self.objectId forObject:self];
+    
+    formattedTopic = [[formattedTopic componentsSeparatedByString:@"/custom"] firstObject];
+    
+    formattedTopic = [NSString stringWithFormat:@"%@/custom/#",formattedTopic];
 
     [self startListeningToMessagesFromTopic:formattedTopic completion:completion];
 }
@@ -691,6 +695,10 @@ static void *topicQueuePropertyKey;
     // Applying format to Topic and Message
     //
     NSString *formattedTopic = [NSString structureTopic:self.objectId forObject:self];
+    
+    formattedTopic = [[formattedTopic componentsSeparatedByString:@"/custom"] firstObject];
+    
+    formattedTopic = [NSString stringWithFormat:@"%@/custom/#",formattedTopic];
 
     [self stopListeningToMessagesFromTopic:formattedTopic completion:completion];
 }
