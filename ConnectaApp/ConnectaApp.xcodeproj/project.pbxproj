@@ -17,12 +17,10 @@
 		1057AF971B4EDFBC006E7C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1057AF951B4EDFBC006E7C33 /* Main.storyboard */; };
 		106157C71B598ED5002E12FF /* SANLU06mac843.crt in Resources */ = {isa = PBXBuildFile; fileRef = 106157C51B598ED5002E12FF /* SANLU06mac843.crt */; };
 		106157C81B598ED5002E12FF /* SANLU06mac843.key in Resources */ = {isa = PBXBuildFile; fileRef = 106157C61B598ED5002E12FF /* SANLU06mac843.key */; };
-		10750A201BCDCFDF00D7BC4F /* MASConnecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */; };
 		10750A4D1BCDE2B600D7BC4F /* ServerCertificate.crt in Resources */ = {isa = PBXBuildFile; fileRef = 10750A4C1BCDE2B600D7BC4F /* ServerCertificate.crt */; };
 		10750A4F1BCDE5F700D7BC4F /* MagServerCert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 10750A4E1BCDE5F700D7BC4F /* MagServerCert.crt */; };
-		10A321571BFAAA93000CE561 /* MASFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A321561BFAAA93000CE561 /* MASFoundation.framework */; };
-		10A321661BFABA67000CE561 /* MASFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A321611BFABA50000CE561 /* MASFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10C016DB1BD6FD3600E26B8F /* MASConnecta.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10BD6BFF1E6F6AE700B65BB5 /* MASConnecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BD6BF81E6F6AD000B65BB5 /* MASConnecta.framework */; };
+		10BD6C001E6F6AEA00B65BB5 /* MASFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BD6BED1E6F6ACB00B65BB5 /* MASFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,44 +31,44 @@
 			remoteGlobalIDString = 1057AF5A1B4EDED3006E7C33;
 			remoteInfo = ConnectaApp;
 		};
-		10750A1A1BCDCFD100D7BC4F /* PBXContainerItemProxy */ = {
+		10BD6BEC1E6F6ACB00B65BB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1057A7101B4C5A0E006E7C33;
-			remoteInfo = MASConnecta;
-		};
-		10750A1C1BCDCFD100D7BC4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1057A71B1B4C5A0E006E7C33;
-			remoteInfo = MASConnectaTests;
-		};
-		10750A1E1BCDCFDA00D7BC4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1057A70F1B4C5A0E006E7C33;
-			remoteInfo = MASConnecta;
-		};
-		10A321601BFABA50000CE561 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+			containerPortal = 10BD6BE61E6F6ACB00B65BB5 /* MASFoundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1059D3701B61AA3700223267;
 			remoteInfo = MASFoundation;
 		};
-		10A321621BFABA50000CE561 /* PBXContainerItemProxy */ = {
+		10BD6BEE1E6F6ACB00B65BB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+			containerPortal = 10BD6BE61E6F6ACB00B65BB5 /* MASFoundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1059D37B1B61AA3800223267;
 			remoteInfo = MASFoundationTests;
 		};
-		10A321641BFABA5B000CE561 /* PBXContainerItemProxy */ = {
+		10BD6BF71E6F6AD000B65BB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+			containerPortal = 10BD6BF01E6F6AD000B65BB5 /* MASConnecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1057A7101B4C5A0E006E7C33;
+			remoteInfo = MASConnecta;
+		};
+		10BD6BF91E6F6AD000B65BB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10BD6BF01E6F6AD000B65BB5 /* MASConnecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1057A71B1B4C5A0E006E7C33;
+			remoteInfo = MASConnectaTests;
+		};
+		10BD6BFB1E6F6ADD00B65BB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10BD6BF01E6F6AD000B65BB5 /* MASConnecta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1057A70F1B4C5A0E006E7C33;
+			remoteInfo = MASConnecta;
+		};
+		10BD6BFD1E6F6AE100B65BB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10BD6BE61E6F6ACB00B65BB5 /* MASFoundation.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1059D36F1B61AA3700223267;
 			remoteInfo = MASFoundation;
@@ -84,8 +82,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				10A321661BFABA67000CE561 /* MASFoundation.framework in Embed Frameworks */,
-				10C016DB1BD6FD3600E26B8F /* MASConnecta.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,11 +105,11 @@
 		1057AF961B4EDFBC006E7C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		106157C51B598ED5002E12FF /* SANLU06mac843.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SANLU06mac843.crt; sourceTree = "<group>"; };
 		106157C61B598ED5002E12FF /* SANLU06mac843.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SANLU06mac843.key; sourceTree = "<group>"; };
-		10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASConnecta.xcodeproj; path = ../MASConnecta.xcodeproj; sourceTree = "<group>"; };
 		10750A4C1BCDE2B600D7BC4F /* ServerCertificate.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ServerCertificate.crt; sourceTree = "<group>"; };
 		10750A4E1BCDE5F700D7BC4F /* MagServerCert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagServerCert.crt; sourceTree = "<group>"; };
-		10A321561BFAAA93000CE561 /* MASFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MASFoundation.framework; path = /Users/SANLU06/Projects/iOS_SDK/MASConnecta/ConnectaApp/MASFoundation.framework; sourceTree = "<absolute>"; };
-		10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASFoundation.xcodeproj; path = ../../MASFoundation/MASFoundation.xcodeproj; sourceTree = "<group>"; };
+		10BD6BE61E6F6ACB00B65BB5 /* MASFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASFoundation.xcodeproj; path = ../../MASFoundation/MASFoundation.xcodeproj; sourceTree = "<group>"; };
+		10BD6BF01E6F6AD000B65BB5 /* MASConnecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASConnecta.xcodeproj; path = ../MASConnecta.xcodeproj; sourceTree = "<group>"; };
+		10BD6C0C1E6F729300B65BB5 /* ConnectaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConnectaApp.entitlements; sourceTree = "<group>"; };
 		10C016C01BD5940E00E26B8F /* SignedCertificate.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = SignedCertificate.crt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,8 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10750A201BCDCFDF00D7BC4F /* MASConnecta.framework in Frameworks */,
-				10A321571BFAAA93000CE561 /* MASFoundation.framework in Frameworks */,
+				10BD6C001E6F6AEA00B65BB5 /* MASFoundation.framework in Frameworks */,
+				10BD6BFF1E6F6AE700B65BB5 /* MASConnecta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +136,8 @@
 		1057AF521B4EDED3006E7C33 = {
 			isa = PBXGroup;
 			children = (
-				10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */,
-				10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */,
+				10BD6BF01E6F6AD000B65BB5 /* MASConnecta.xcodeproj */,
+				10BD6BE61E6F6ACB00B65BB5 /* MASFoundation.xcodeproj */,
 				1057AF5D1B4EDED3006E7C33 /* ConnectaApp */,
 				1057AF771B4EDED4006E7C33 /* ConnectaAppTests */,
 				1057AF5C1B4EDED3006E7C33 /* Products */,
@@ -160,6 +156,7 @@
 		1057AF5D1B4EDED3006E7C33 /* ConnectaApp */ = {
 			isa = PBXGroup;
 			children = (
+				10BD6C0C1E6F729300B65BB5 /* ConnectaApp.entitlements */,
 				1057AF621B4EDED3006E7C33 /* AppDelegate.h */,
 				1057AF631B4EDED3006E7C33 /* AppDelegate.m */,
 				10750A4E1BCDE5F700D7BC4F /* MagServerCert.crt */,
@@ -204,20 +201,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		10750A151BCDCFD100D7BC4F /* Products */ = {
+		10BD6BE71E6F6ACB00B65BB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */,
-				10750A1D1BCDCFD100D7BC4F /* MASConnectaTests.xctest */,
+				10BD6BED1E6F6ACB00B65BB5 /* MASFoundation.framework */,
+				10BD6BEF1E6F6ACB00B65BB5 /* MASFoundationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		10A3215B1BFABA50000CE561 /* Products */ = {
+		10BD6BF11E6F6AD000B65BB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				10A321611BFABA50000CE561 /* MASFoundation.framework */,
-				10A321631BFABA50000CE561 /* MASFoundationTests.xctest */,
+				10BD6BF81E6F6AD000B65BB5 /* MASConnecta.framework */,
+				10BD6BFA1E6F6AD000B65BB5 /* MASConnectaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,8 +234,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				10A321651BFABA5B000CE561 /* PBXTargetDependency */,
-				10750A1F1BCDCFDA00D7BC4F /* PBXTargetDependency */,
+				10BD6BFE1E6F6AE100B65BB5 /* PBXTargetDependency */,
+				10BD6BFC1E6F6ADD00B65BB5 /* PBXTargetDependency */,
 			);
 			name = ConnectaApp;
 			productName = ConnectaApp;
@@ -280,7 +277,7 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -303,12 +300,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 10750A151BCDCFD100D7BC4F /* Products */;
-					ProjectRef = 10750A141BCDCFD100D7BC4F /* MASConnecta.xcodeproj */;
+					ProductGroup = 10BD6BF11E6F6AD000B65BB5 /* Products */;
+					ProjectRef = 10BD6BF01E6F6AD000B65BB5 /* MASConnecta.xcodeproj */;
 				},
 				{
-					ProductGroup = 10A3215B1BFABA50000CE561 /* Products */;
-					ProjectRef = 10A3215A1BFABA50000CE561 /* MASFoundation.xcodeproj */;
+					ProductGroup = 10BD6BE71E6F6ACB00B65BB5 /* Products */;
+					ProjectRef = 10BD6BE61E6F6ACB00B65BB5 /* MASFoundation.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -320,32 +317,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		10750A1B1BCDCFD100D7BC4F /* MASConnecta.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MASConnecta.framework;
-			remoteRef = 10750A1A1BCDCFD100D7BC4F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		10750A1D1BCDCFD100D7BC4F /* MASConnectaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MASConnectaTests.xctest;
-			remoteRef = 10750A1C1BCDCFD100D7BC4F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		10A321611BFABA50000CE561 /* MASFoundation.framework */ = {
+		10BD6BED1E6F6ACB00B65BB5 /* MASFoundation.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MASFoundation.framework;
-			remoteRef = 10A321601BFABA50000CE561 /* PBXContainerItemProxy */;
+			remoteRef = 10BD6BEC1E6F6ACB00B65BB5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		10A321631BFABA50000CE561 /* MASFoundationTests.xctest */ = {
+		10BD6BEF1E6F6ACB00B65BB5 /* MASFoundationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = MASFoundationTests.xctest;
-			remoteRef = 10A321621BFABA50000CE561 /* PBXContainerItemProxy */;
+			remoteRef = 10BD6BEE1E6F6ACB00B65BB5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10BD6BF81E6F6AD000B65BB5 /* MASConnecta.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MASConnecta.framework;
+			remoteRef = 10BD6BF71E6F6AD000B65BB5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10BD6BFA1E6F6AD000B65BB5 /* MASConnectaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MASConnectaTests.xctest;
+			remoteRef = 10BD6BF91E6F6AD000B65BB5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -402,15 +399,15 @@
 			target = 1057AF5A1B4EDED3006E7C33 /* ConnectaApp */;
 			targetProxy = 1057AF751B4EDED4006E7C33 /* PBXContainerItemProxy */;
 		};
-		10750A1F1BCDCFDA00D7BC4F /* PBXTargetDependency */ = {
+		10BD6BFC1E6F6ADD00B65BB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MASConnecta;
-			targetProxy = 10750A1E1BCDCFDA00D7BC4F /* PBXContainerItemProxy */;
+			targetProxy = 10BD6BFB1E6F6ADD00B65BB5 /* PBXContainerItemProxy */;
 		};
-		10A321651BFABA5B000CE561 /* PBXTargetDependency */ = {
+		10BD6BFE1E6F6AE100B65BB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MASFoundation;
-			targetProxy = 10A321641BFABA5B000CE561 /* PBXContainerItemProxy */;
+			targetProxy = 10BD6BFD1E6F6AE100B65BB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -520,6 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ConnectaApp/ConnectaApp.entitlements;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ConnectaApp/ConnectaApp.entitlements;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
