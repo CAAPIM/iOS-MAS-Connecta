@@ -1,3 +1,9 @@
+# Version 4.0.00
+
+### Bug fixes
+- SDK was not returning an error when unsubscribing the topic if there is no network connection. . [DE272675]
+- SDK did not handle wildcarding when subscribing/unsubscribing the topic. [US299604]
+
 # Version 1.3
 
 ### Bug fixes
