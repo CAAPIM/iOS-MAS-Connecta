@@ -1,4 +1,10 @@
-# Version 1.3
+# Version 4.0.00
+
+### Bug fixes
+- SDK was not returning an error when unsubscribing the topic if there is no network connection. . [DE272675]
+- SDK did not handle wildcarding when subscribing/unsubscribing the topic. [US299604]
+
+# Version 1.3.00
 
 ### Bug fixes
 - Fixed a bug where MASConnecta framework fails to parse the message payload that is not JSON format. [DE255873]
