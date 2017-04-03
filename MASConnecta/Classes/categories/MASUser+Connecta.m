@@ -618,6 +618,10 @@ static void *topicQueuePropertyKey;
     // Applying format to Topic and Message
     //
     NSString *formattedTopic = [NSString structureTopic:self.objectId forObject:self];
+    
+    formattedTopic = [[formattedTopic componentsSeparatedByString:@"/custom"] firstObject];
+    
+    formattedTopic = [NSString stringWithFormat:@"%@/custom/#",formattedTopic];
 
     [self startListeningToMessagesFromTopic:formattedTopic completion:completion];
 }
@@ -677,12 +681,15 @@ static void *topicQueuePropertyKey;
     //
     // Subscribe to a Topic
     //
-    [[MASMQTTClient sharedClient] unsubscribeFromTopic:topic withCompletionHandler:nil];
+    [[MASMQTTClient sharedClient] unsubscribeFromTopic:topic withCompletionHandler:^(BOOL completed, NSError * _Nullable error) {
+        
+        //
+        // Notify
+        //
+        if (completion) completion(completed, error);
+
+    }];
     
-    //
-    // Notify
-    //
-    if (completion) completion(YES, nil);
 }
 
 - (void)stopListeningToMyMessages:(void (^)(BOOL success, NSError *error))completion
@@ -691,6 +698,10 @@ static void *topicQueuePropertyKey;
     // Applying format to Topic and Message
     //
     NSString *formattedTopic = [NSString structureTopic:self.objectId forObject:self];
+    
+    formattedTopic = [[formattedTopic componentsSeparatedByString:@"/custom"] firstObject];
+    
+    formattedTopic = [NSString stringWithFormat:@"%@/custom/#",formattedTopic];
 
     [self stopListeningToMessagesFromTopic:formattedTopic completion:completion];
 }

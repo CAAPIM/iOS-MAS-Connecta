@@ -218,6 +218,11 @@
         structuredTopic = [NSString stringWithFormat:@"/%@/client/groups/%@/custom/%@",apiVersion,objectID,topic];
     }
 
+    if (![MASConfiguration currentConfiguration].gatewayPrefix || ![[MASConfiguration currentConfiguration].gatewayPrefix isEqualToString:@""]) {
+        
+        structuredTopic = [NSString stringWithFormat:@"/%@%@",[MASConfiguration currentConfiguration].gatewayPrefix,structuredTopic];
+    }
+    
     return structuredTopic;
 }
 

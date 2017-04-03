@@ -35,82 +35,86 @@
 {
     [super viewDidLoad];
     
-    [MAS start:^(BOOL completed, NSError *error) {
+    [MAS startWithDefaultConfiguration:YES completion:^(BOOL completed, NSError * _Nullable error) {
         
-        [MASUser loginWithUserName:@"jkirk" password:@"CAapiGW" completion:^(BOOL completed, NSError *error) {
+        if (completed) {
             
-            //
-            //1- Create the MQTT client instance (Using TLS or not)
-            //
-            self.client = [MASMQTTClient sharedClient];
-            
-            NSLog(@"version: %@",[MASMQTTClient version]);
-            
-            
-            //
-            // 2- Define the handler that will be called when MQTT messages are received by the client. Other options are Delegation () or Notification (MASConnectaOperationDidReceiveMessageNotification)
-            //
-            __weak typeof(self) weakSelf = self;
-            [self.client setMessageHandler:^(MASMQTTMessage *message) {
+            [MASUser loginWithUserName:@"admin" password:@"7layer" completion:^(BOOL completed, NSError *error) {
                 
-                // the MQTTClientDelegate methods are called from a GCD queue.
-                // Any update to the UI must be done on the main queue
-                dispatch_async(dispatch_get_main_queue(), ^{
+                //
+                //1- Create the MQTT client instance (Using TLS or not)
+                //
+                self.client = [MASMQTTClient sharedClient];
+                
+                NSLog(@"version: %@",[MASMQTTClient version]);
+                
+                
+                //
+                // 2- Define the handler that will be called when MQTT messages are received by the client. Other options are Delegation () or Notification (MASConnectaOperationDidReceiveMessageNotification)
+                //
+                __weak typeof(self) weakSelf = self;
+                [self.client setMessageHandler:^(MASMQTTMessage *message) {
                     
-                    //Update MessageBoard
-                    weakSelf.messageBoard.text = [NSString stringWithFormat:@"%@ \n %@",message.payloadString, weakSelf.messageBoard.text];
-                });
-            }];
-            
-            
-            //
-            // 3- Define the handler that will be called when MQTT broker disconnect the MQTT client
-            //
-            __block typeof(self.status) blockStatus = self.status;
-            [self.client setDisconnectionHandler:^(NSUInteger code) {
+                    // the MQTTClientDelegate methods are called from a GCD queue.
+                    // Any update to the UI must be done on the main queue
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        //Update MessageBoard
+                        weakSelf.messageBoard.text = [NSString stringWithFormat:@"%@ \n %@",message.payloadString, weakSelf.messageBoard.text];
+                    });
+                }];
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //
+                // 3- Define the handler that will be called when MQTT broker disconnect the MQTT client
+                //
+                __block typeof(self.status) blockStatus = self.status;
+                [self.client setDisconnectionHandler:^(NSUInteger code) {
                     
-                    blockStatus.textColor = [UIColor redColor];
-                    blockStatus.text = NSLocalizedString(@"disconnected",);
-                });
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        blockStatus.textColor = [UIColor redColor];
+                        blockStatus.text = NSLocalizedString(@"disconnected",);
+                    });
+                    
+                }];
+                
+                
+                //
+                // 4- Connect to MQTT broker
+                //
+                //    [self connect:self];
+                
+                
+                //
+                // 5- Add Observers for MASConnecta Notifications
+                //
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(onConnectedNotification:)
+                                                             name:MASConnectaOperationDidConnectNotification
+                                                           object:nil];
+                
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(onDisconnectedNotification:)
+                                                             name:MASConnectaOperationDidDisconnectNotification
+                                                           object:nil];
+                
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(onMessageReceivedNotification:)
+                                                             name:MASConnectaOperationDidReceiveMessageNotification
+                                                           object:nil];
+                
+                // Activate Debug Mode
+                [self.client setDebugMode:YES];
+                
+                
+                // Set Delegation
+                [self.client setDelegate:self];
+                
                 
             }];
-            
-            
-            //
-            // 4- Connect to MQTT broker
-            //
-            //    [self connect:self];
-            
-            
-            //
-            // 5- Add Observers for MASConnecta Notifications
-            //
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(onConnectedNotification:)
-                                                         name:MASConnectaOperationDidConnectNotification
-                                                       object:nil];
-            
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(onDisconnectedNotification:)
-                                                         name:MASConnectaOperationDidDisconnectNotification
-                                                       object:nil];
-            
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(onMessageReceivedNotification:)
-                                                         name:MASConnectaOperationDidReceiveMessageNotification
-                                                       object:nil];
-            
-            // Activate Debug Mode
-            [self.client setDebugMode:YES];
-            
-            
-            // Set Delegation
-            [self.client setDelegate:self];
-            
 
-        }];
+        }
     }];
 
 }
@@ -203,18 +207,40 @@
     //Subscribe to the topic with custom QoS
     __weak typeof(self) weakSelf = self;
     
-    [self.client unsubscribeFromTopic:self.subscribe.text withCompletionHandler:^{
-       
+    [self.client unsubscribeFromTopic:self.subscribe.text withCompletionHandler:^(BOOL completed, NSError * _Nullable error) {
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSString *message = [NSString stringWithFormat:@"unsubscribed from topic: %@", weakSelf.subscribe.text];
-            
-            //Update MessageBoard
-            weakSelf.messageBoard.text = [NSString stringWithFormat:@"%@ \n %@",message, weakSelf.messageBoard.text];
+            if (completed) {
+
+                NSString *message = [NSString stringWithFormat:@"unsubscribed from topic: %@", weakSelf.subscribe.text];
+                
+                //Update MessageBoard
+                weakSelf.messageBoard.text = [NSString stringWithFormat:@"%@ \n %@",message, weakSelf.messageBoard.text];
+                
+                NSLog(@"unsubscribed from topic %@", self.subscribe.text);
+            }
+            else {
+                
+                NSLog(@"ERROR unsubscribing from topic");
+            }
         });
         
-        NSLog(@"unsubscribed from topic %@", self.subscribe.text);
+        
+
     }];
+//    [self.client unsubscribeFromTopic:self.subscribe.text withCompletionHandler:^{
+//       
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            NSString *message = [NSString stringWithFormat:@"unsubscribed from topic: %@", weakSelf.subscribe.text];
+//            
+//            //Update MessageBoard
+//            weakSelf.messageBoard.text = [NSString stringWithFormat:@"%@ \n %@",message, weakSelf.messageBoard.text];
+//        });
+//        
+//        NSLog(@"unsubscribed from topic %@", self.subscribe.text);
+//    }];
 }
 
 
@@ -229,44 +255,67 @@
     if (!self.currentUser) {
 
         //Just testing methods of MASFoundation
-        [MASUser logoffWithCompletion:^(BOOL completed, NSError *error) {
-            
+        [[MASUser currentUser] logoutWithCompletion:^(BOOL completed, NSError * _Nullable error) {
+
             NSLog(@"%d",completed);
             
             //Login in with a different user
-            [MASUser loginWithUserName:@"jkirk" password:@"CAapiGW" completion:^(BOOL completed, NSError *error) {
+            [MASUser loginWithUserName:@"admin" password:@"7layer" completion:^(BOOL completed, NSError *error) {
                 
                 self.currentUser = [MASUser currentUser];
                 
-                [self.currentUser sendMessage:self.publish.text toTopic:self.subscribe.text completion:^(BOOL success, NSError *error) {
-                    
-                    if (success) {
-                        
-                        NSLog(@"Message Sent");
-                    }
-                    else {
-                        
-                        NSLog(@"Message Failure with error: %@",error.localizedDescription);
-                    }
-                }];
+//                [self.currentUser sendMessage:self.publish.text toTopic:self.subscribe.text completion:^(BOOL success, NSError *error) {
+//                    
+//                    if (success) {
+//                        
+//                        NSLog(@"Message Sent");
+//                    }
+//                    else {
+//                        
+//                        NSLog(@"Message Failure with error: %@",error.localizedDescription);
+//                    }
+//                }];
             }];
+
         }];
+//        [MASUser logoffWithCompletion:^(BOOL completed, NSError *error) {
+//            
+//            NSLog(@"%d",completed);
+//            
+//            //Login in with a different user
+//            [MASUser loginWithUserName:@"jkirk" password:@"CAapiGW" completion:^(BOOL completed, NSError *error) {
+//                
+//                self.currentUser = [MASUser currentUser];
+//                
+//                [self.currentUser sendMessage:self.publish.text toTopic:self.subscribe.text completion:^(BOOL success, NSError *error) {
+//                    
+//                    if (success) {
+//                        
+//                        NSLog(@"Message Sent");
+//                    }
+//                    else {
+//                        
+//                        NSLog(@"Message Failure with error: %@",error.localizedDescription);
+//                    }
+//                }];
+//            }];
+//        }];
         
 
     }
     else {
 
-        [self.currentUser sendMessage:self.publish.text toTopic:self.subscribe.text completion:^(BOOL success, NSError *error) {
-            
-            if (success) {
-                
-                NSLog(@"Message Sent");
-            }
-            else {
-                
-                NSLog(@"Message Failure with error: %@",error.localizedDescription);
-            }
-        }];
+//        [self.currentUser sendMessage:self.publish.text toTopic:self.subscribe.text completion:^(BOOL success, NSError *error) {
+//            
+//            if (success) {
+//                
+//                NSLog(@"Message Sent");
+//            }
+//            else {
+//                
+//                NSLog(@"Message Failure with error: %@",error.localizedDescription);
+//            }
+//        }];
 
     }
     

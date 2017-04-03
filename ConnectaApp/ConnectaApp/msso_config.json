@@ -1,35 +1,49 @@
 {
     "server": {
-        "hostname": "mas-staging.ca.com",
+        "hostname": "masdemo",
         "port": 8443,
         "prefix": "",
         "server_certs": [
                          [
-                          "-----BEGIN CERTIFICATE-----","MIIC/jCCAeagAwIBAgIIAQ0oRGrC/3owDQYJKoZIhvcNAQEMBQAwHTEbMBkGA1UEAxMSbWFzLXN0","YWdpbmcuY2EuY29tMB4XDTE2MDExMjAyMDYxNloXDTI2MDEwOTAyMDYxNlowHTEbMBkGA1UEAxMS","bWFzLXN0YWdpbmcuY2EuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3fHFcpmd","jM6DwLqrAnsyG8E2O4eAflEfeGL9s+cAGW1gIPTVNkhMcQBGaSpHgkbkD9yBTYyYr4kKRkh+3/8X","j9bvwGzyEUZIvJeIPOk0HuYmEuP/D0wBx7/x+JNlbiYqP/24TtPwhjgLzLcl3cURVSCTDcJIk30i","HjwEnJ5MV5aa+oCGSeFd551IgqK7sbyxSRBBjJdfuv6mmPaiuarqaBLiuU3KWTOMp4rFLhEzVMjV","otSS8oCzhWG2oSf64zp7H2k+2ix7jt4nDeB0l/QTwSFLRKlq1lLJfwv6aWIVpVAtxjUDGCGMq2UL","4xHrTwM89zdX9+ZO83h/Lko1uSwE7QIDAQABo0IwQDAdBgNVHQ4EFgQUYDnPQx0JcQ8JLWbmMm35","asux+AIwHwYDVR0jBBgwFoAUYDnPQx0JcQ8JLWbmMm35asux+AIwDQYJKoZIhvcNAQEMBQADggEB","AB8eIsQJs0/PZ63AiNgENF2CBwSCDODWyhSdnhbZ7iSNGihXbQJcqRz/0UaSVDTrd4lO8Y+igl8t","JfE6vJ0fmT1NLS+cOFUDgVSDOTL1n3c4YrEt4cMv5asysGYIGY5LZ5izG7FT3Fhk2EGpoyQRrayI","Npbw9K6My3MQ6JFfittpp13TxxqW0CgQrNX5ZiFkDHACIld2RktiE4N0j10X0kJz5uIFoS4n0kUX","eFsUtaZGhdT3xlQXWvyrkZw1tuLlHSuxm1ZaSiwc8H+49F3NWyKALyzQEqGimMN9vWoZbjpzPWEO","apHv6/8eU8FAT4ymZAYXkjrnux+tUo8E2kgbSMM=","-----END CERTIFICATE-----"
+                          "-----BEGIN CERTIFICATE-----",
+                          "MIIC6TCCAdGgAwIBAgIJANUL795tlWebMA0GCSqGSIb3DQEBDAUAMBIxEDAOBgNVBAMTB21hc2Rl",
+                          "bW8wHhcNMTYwNDIwMTUwMDEyWhcNMjYwNDE4MTUwMDEyWjASMRAwDgYDVQQDEwdtYXNkZW1vMIIB",
+                          "IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAklnXG6u96UYTxFUPn5sdr0W1FELu4Jlz/Dzm",
+                          "8qEARlU0uFIDYaFAkrBznF+/GDiuAWysesLxq8U9Z8VLLGy++SF6oqe3lmQSDZOV8e8jw5OHUCoS",
+                          "tyUMqXeLtWbCqcmM3exwgud2oFPZ4UJOpxann2nGJ8Px12Gxbrts8ncow8DwPAGuvMWzwWrD8XGO",
+                          "myf9on23sOk6ep8ATAUTe0Ep4eMhilI6whRPeB0eR4950M+SCBheTAQJ3YAqp33kjBCUQqCvPcU5",
+                          "/ddYFpmsueC4XTZzdNWhHJ2ZtOXF2Z/A3qLLbym3xRKv/qy0KXbPQA2xN2zwEcEFwUmVSpu+Opl+",
+                          "VQIDAQABo0IwQDAdBgNVHQ4EFgQUOLMfGJXgehF1nU3bzDApxGYfZW4wHwYDVR0jBBgwFoAUOLMf",
+                          "GJXgehF1nU3bzDApxGYfZW4wDQYJKoZIhvcNAQEMBQADggEBAHG9wnSQg87ETfX7zYtXF3GAzvaq",
+                          "XSzXEPoJlx8yI+XDk9OWFr7tkEvD2foVdaVkuIoFcIeozVZy7HCpqlj0qI0IDCmuMhP6R8XCmhAw",
+                          "1n5OcDXkaOcDkDzKy8hxQWsvJDskpyse7knezW/vfCFi61eDf7c8rn1QcVsUYuEDAJ5KgqaGR48l",
+                          "/itO7fJrEjkNxuXMttHmJyn3/T/srgk1DKSIS8fJ5z7DfXf60tcOZVljlaHuODRmO+fjQQdxsqq6",
+                          "xTz52ku+61YiEwRdubi7jTvoIG56LAgbqTCmDypivOeFoBLrSVxhohN7lIoxBQVwe29UBNIb34dR",
+                          "RYeM6RwRV+I=",
+                          "-----END CERTIFICATE-----"
                           ]
                          ]
     },
     "oauth": {
         "client": {
             "organization": "CA Technologies",
-            "description": "Used for the Messaging sample app",
-            "client_name": "MessagingApp",
+            "description": "What is the app used for?",
+            "client_name": "PubSub",
             "client_type": "confidential",
-            "registered_by": "admin",
-            "client_custom": "{}",
+            "registered_by": "lsanches",
+            "client_custom": {},
             "client_ids": [
-                           
                            {
-                           "client_id": "a604a734-a792-4772-aefb-4939375eb975",
-                           "client_secret":"",
-                           "scope": "openid msso phone profile address email  msso_client_register mas_storage mas_messaging mas_identity ",
-                           "redirect_uri": "https://ios.ssosdk.ca.com/ios",
+                           "client_id": "136eae57-4e0d-41cf-8681-91af0398d90f",
+                           "client_secret": "",
+                           "scope": "openid msso phone profile address email msso_client_register msso_register mas_messaging mas_storage mas_identity mas_identity_retrieve_users mas_identity_create_users mas_identity_update_users mas_identity_delete_users mas_identity_retrieve_groups mas_identity_create_groups mas_identity_update_groups mas_identity_delete_groups",
+                           "redirect_uri": "mag://iOS-b91d5d56-fc37-4047-a8c2-ce953c7e3bcf-e5076d28-7199-4014-8062-4290dd344e03.ca.com",
                            "environment": "iOS",
                            "status": "ENABLED",
-                           "registered_by": "admin",
+                           "registered_by": "lsanches",
                            "service_ids": "",
                            "account_plan_mapping_ids": "",
-                           "client_key_custom": "{}"
+                           "client_key_custom": {}
                            }
                            ]
         },
@@ -43,9 +57,41 @@
         "oauth_protected_endpoints": {
             "userinfo_endpoint_path": "/openid/connect/v1/userinfo"
         }
-    },"mas": { "scim-path":"/SCIM/MAS/v2", "mas-storage-path":"/MASS/v1/Client" },"mag": { "system_endpoints": { "device_register_endpoint_path": "/connect/device/register", "device_client_register_endpoint_path": "/connect/device/register/client", "device_remove_endpoint_path": "/connect/device/remove", "client_credential_init_endpoint_path": "/connect/client/initialize" }, "oauth_protected_endpoints": { "enterprise_browser_endpoint_path": "/connect/enterprise/browser", "device_list_endpoint_path": "/connect/device/list" }, "mobile_sdk": { "sso_enabled": true, "location_enabled": true, "location_provider": "network", "msisdn_enabled": true, "enable_public_key_pinning": false, "trusted_public_pki":false, "trusted_cert_pinned_public_key_hashes" :[], "client_cert_rsa_keybits": 1024 }, "ble":{ "msso_ble_service_uuid":"980c2f36-bde3-11e4-8dfc-aa07a5b093db", "msso_ble_characteristic_uuid":"980c34cc-bde3-11e4-8dfc-aa07a5b093db", "msso_ble_rssi": -35 } },
+    },
+    "mas": {
+        "scim-path": "/SCIM/MAS/v2",
+        "mas-storage-path": "/MASS/v1/Client"
+    },
+    "mag": {
+        "system_endpoints": {
+            "device_register_endpoint_path": "/connect/device/register",
+            "device_client_register_endpoint_path": "/connect/device/register/client",
+            "device_remove_endpoint_path": "/connect/device/remove",
+            "client_credential_init_endpoint_path": "/connect/client/initialize",
+            "authenticate_otp_endpoint_path": "/auth/generateOTP"
+        },
+        "oauth_protected_endpoints": {
+            "enterprise_browser_endpoint_path": "/connect/enterprise/browser",
+            "device_list_endpoint_path": "/connect/device/list"
+        },
+        "mobile_sdk": {
+            "sso_enabled": true,
+            "location_enabled": true,
+            "location_provider": "network",
+            "msisdn_enabled": true,
+            "enable_public_key_pinning": false,
+            "trusted_public_pki": false,
+            "trusted_cert_pinned_public_key_hashes": [],
+            "client_cert_rsa_keybits": 1024
+        },
+        "ble": {
+            "msso_ble_service_uuid": "980c2f36-bde3-11e4-8dfc-aa07a5b093db",
+            "msso_ble_characteristic_uuid": "980c34cc-bde3-11e4-8dfc-aa07a5b093db",
+            "msso_ble_rssi": -35
+        }
+    },
     "custom": {
-        "oauth_demo_protected_api_endpoint_path":"/oauth/v2/protectedapi/foo",
-        "mag_demo_products_endpoint_path":"/protected/resource/products"
+        "oauth_demo_protected_api_endpoint_path": "/oauth/v2/protectedapi/foo",
+        "mag_demo_products_endpoint_path": "/protected/resource/products"
     }
 }
