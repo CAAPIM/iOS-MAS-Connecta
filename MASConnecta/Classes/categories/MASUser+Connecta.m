@@ -354,14 +354,16 @@ static void *topicQueuePropertyKey;
                                                         toTopic:msm.topic
                                                         withQos:msm.qos
                                                          retain:msm.retained
-                                              completionHandler:nil];
+                                                     completion:^(BOOL completed, NSError * _Nullable error, int mid) {
+                                                         
+                                                         //
+                                                         // Notify
+                                                         //
+                                                         if (completion) completion(completed,error);
+                                                     }];
                 }
-                self.messageQueue = [[NSMutableArray alloc] init];
                 
-                //
-                // Notify
-                //
-                if (completion) completion(YES, nil);
+                self.messageQueue = [[NSMutableArray alloc] init];
             }
             
             //
@@ -397,14 +399,16 @@ static void *topicQueuePropertyKey;
                                                 toTopic:msm.topic
                                                 withQos:msm.qos
                                                  retain:msm.retained
-                                      completionHandler:nil];
+                                             completion:^(BOOL completed, NSError * _Nullable error, int mid) {
+                                                 
+                                                 //
+                                                 // Notify
+                                                 //
+                                                 if (completion) completion(completed,error);
+                                             }];
         }
-        self.messageQueue = [[NSMutableArray alloc] init];
         
-        //
-        // Notify
-        //
-        if (completion) completion(YES,nil);
+        self.messageQueue = [[NSMutableArray alloc] init];
     }
 }
 
@@ -468,7 +472,7 @@ static void *topicQueuePropertyKey;
     //
     // Format Topic Structure
     //
-    __block NSString *formattedTopic = topic; //[NSString structureTopic:topic forObject:self];
+    __block NSString *formattedTopic = topic;
     
     //
     // Queue the Topic
@@ -504,15 +508,23 @@ static void *topicQueuePropertyKey;
                     //
                     // Subscribe to a topic
                     //
-                    [[MASMQTTClient sharedClient] subscribeToTopic:queueTopic withCompletionHandler:^(NSArray *grantedQos)
-                    {
+                    [[MASMQTTClient sharedClient] subscribeToTopic:queueTopic withCompletion:^(BOOL completed, NSError * _Nullable error, NSArray * _Nonnull grantedQos) {
+                        
                         NSOrderedSet *availableQoS = [NSOrderedSet orderedSetWithArray:@[@0,@1,@2]];
                         NSOrderedSet *receivedQoS = [NSOrderedSet orderedSetWithArray:grantedQos];
+                        
+                        if (!completed) {
+
+                            //
+                            // Notify
+                            //
+                            if (completion) completion(NO, error);
+                        }
                         
                         //
                         // If the received QoS is within the availables QoS
                         //
-                        if (![receivedQoS isSubsetOfOrderedSet:availableQoS])
+                        else if (![receivedQoS isSubsetOfOrderedSet:availableQoS])
                         {
                             //
                             // Failure
@@ -573,15 +585,24 @@ static void *topicQueuePropertyKey;
             //
             // Subscribe to a Topic
             //
-            [[MASMQTTClient sharedClient] subscribeToTopic:queueTopic withCompletionHandler:^(NSArray *grantedQos)
-            {
+            [[MASMQTTClient sharedClient] subscribeToTopic:queueTopic withCompletion:^(BOOL completed, NSError * _Nullable error, NSArray * _Nonnull grantedQos) {
+
                 NSOrderedSet *availableQoS = [NSOrderedSet orderedSetWithArray:@[@0,@1,@2]];
                 NSOrderedSet *receivedQoS = [NSOrderedSet orderedSetWithArray:grantedQos];
                 
+                if (!completed) {
+                    
+                    //
+                    // Notify
+                    //
+                    if (completion) completion(NO, error);
+                    
+                }
+
                 //
                 // If received QoS is contained within the available QoS
                 //
-                if (![receivedQoS isSubsetOfOrderedSet:availableQoS])
+                else if (![receivedQoS isSubsetOfOrderedSet:availableQoS])
                 {
                     //
                     // Failure
@@ -679,7 +700,7 @@ static void *topicQueuePropertyKey;
     }
     
     //
-    // Subscribe to a Topic
+    // UnSubscribe to a Topic
     //
     [[MASMQTTClient sharedClient] unsubscribeFromTopic:topic withCompletionHandler:^(BOOL completed, NSError * _Nullable error) {
         
