@@ -3,10 +3,10 @@
 NOTE: From this version on the frameworks changed to Dynamic instead of Static library
 
 ### Bug fixes
-- 
+- Enhanced Pub/Sub and Messaging callback and error message. [US317131]
 
 ### New Features
--  
+- The SDK supports dynamic framework. All you need to do is update your Xcode settings. [US367604]
 
 # Version 1.4.00
 
