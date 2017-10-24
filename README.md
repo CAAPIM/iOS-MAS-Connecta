@@ -1,4 +1,4 @@
-MAS Connecta is the core messaging framework of the Mobile SDK, which is part of [CA Mobile App Services][mas.ca.com]. It gives developers the ability to create social collaborative apps where users can message and send data to each other.
+MASConnecta is the core messaging framework of the iOS Mobile SDK, which is part of CA Mobile API Gateway. It gives developers the ability to create social collaborative apps where users can message and send data to each other.
 
 ## Features
 
@@ -9,10 +9,8 @@ The MASConnecta framework comes with the following features:
 
 ## Get Started
 
+- Check out our [documentation][docs] for sample code, video tutorials, and more.
 - [Download MASConnecta][download] 
-- Read the ["Getting Started" guide][get-started] or watch some [video tutorials][videos]
-- Check out our [documentation][docs] for more details and sample codes
-
 
 ## Communication
 
