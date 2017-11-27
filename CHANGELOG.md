@@ -1,3 +1,12 @@
+# Version 1.6.00
+
+### Bug fixes
+- `MASMQTTClient` was not able to re-establish MQTT connection when the user session is logged-out, and logs-in with different account. Mobile SDK will now properly handle session change for MQTT connection. [US408725]
+- Mobile SDK's MQTT connection was not able to establish mutual SSL connection with public CA certificate. It is fixed now that Mobile SDK can establish mutual SSL with public CA certificate when **entire certificate chain** is exported in JSON configuration. [US399506]
+
+### New features
+None.
+
 # Version 1.5.00
 
 NOTE: From this version on the frameworks changed to Dynamic instead of Static library
