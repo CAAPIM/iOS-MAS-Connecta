@@ -3,6 +3,7 @@
 ### Bug fixes
 - `MASMQTTClient` was unable to reestablish MQTT connection when the user session was logged-out, and logged in with different account. Mobile SDK now properly handles session change for MQTT connection. [US408725]
 - Mobile SDK's MQTT connection was unable to establish mutual SSL connection with public CA certificate. the Mobile SDK can now establish mutual SSL with public CA certificate when **entire certificate chain** is exported in JSON configuration. [US399506]
+- For MQTT messages, when the payload of the message is in array format, Mobile SDK was throwing an exception while parsing the message payload.  Mobile SDK now properly parses the message payload. [DE333766]
 
 ### New features
 None.
