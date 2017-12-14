@@ -1,3 +1,13 @@
+# Version 1.6.00
+
+### Bug fixes
+- `MASMQTTClient` was unable to reestablish an MQTT connection when the user logged out, and then logged in with a different account. The Mobile SDK now properly handles session changes for the MQTT connection. [US408725]
+- The Mobile SDK MQTT connection was unable to establish a mutual SSL connection with a public CA certificate. The Mobile SDK can now establish mutual SSL with a public CA certificate when the **entire certificate chain** is exported in a JSON configuration. [US399506]
+- When parsing the payload of an MQTT message in an array format, the Mobile SDK threw an exception. The Mobile SDK now properly parses the message payload. [DE333766]
+
+### New features
+None.
+
 # Version 1.5.00
 
 NOTE: From this version on the frameworks changed to Dynamic instead of Static library
@@ -14,7 +24,7 @@ NOTE: From this version on the frameworks changed to Dynamic instead of Static l
 - SDK was not returning an error when unsubscribing the topic if there is no network connection. . [DE272675]
 - SDK did not handle wildcarding when subscribing/unsubscribing the topic. [US299604]
 
-# Version 1.3.00
+# Version 1.3.01
 
 ### Bug fixes
 - Fixed a bug where MASConnecta framework fails to parse the message payload that is not JSON format. [DE255873]
