@@ -43,7 +43,7 @@
         NSString *errorMessage = [json objectForKey:MASConnectaMessageErrorKey];
         payload = [errorMessage dataUsingEncoding:NSUTF8StringEncoding];
     }
-    else if (json && [json.allKeys containsObject:MASConnectaMessagePayloadKey]) {
+    else if (json && [json isKindOfClass:[NSDictionary class]] && [json.allKeys containsObject:MASConnectaMessagePayloadKey]) {
 
         NSString *base64String = [json objectForKey:MASConnectaMessagePayloadKey];
         payload = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
@@ -53,32 +53,40 @@
         payload = mqttMessage.payload;
     }
 
+    NSString *version = nil;
+    NSString *contentEncoding = nil;
+    NSString *contentType = nil;
     
-    //
-    // Version
-    //
-    NSString *version = [json objectForKey:MASConnectaMessagePayloadVersionKey];
+    NSString *senderDisplayName = nil;
+    NSString *senderId = nil;
+    NSString *dateValue = nil;
     
-    
-    //
-    // Content
-    //
-    NSString *contentEncoding = [json objectForKey:MASConnectaMessagePayloadContentEncodingKey];
-    NSString *contentType = [json objectForKey:MASConnectaMessagePayloadContentTypeKey];
-    
+    if (json && [json isKindOfClass:[NSDictionary class]])
+    {
+        //
+        // Version
+        //
+        version = [json objectForKey:MASConnectaMessagePayloadVersionKey];
+        
+        //
+        // Content
+        //
+        contentEncoding = [json objectForKey:MASConnectaMessagePayloadContentEncodingKey];
+        contentType = [json objectForKey:MASConnectaMessagePayloadContentTypeKey];
+        
+        //
+        // Sender
+        //
+        senderDisplayName = [json objectForKey:MASConnectaMessagePayloadDisplayNameKey];
+        senderId = [json objectForKey:MASConnectaMessagePayloadSenderIdKey];
+        dateValue = [json objectForKey:MASConnectaMessagePayloadSentTimeKey];
+    }
     
     //
     // Receiver
     //
     NSString *receiverId = [MASUser currentUser].objectId;
     
-    
-    //
-    // Sender
-    //
-    NSString *senderDisplayName = [json objectForKey:MASConnectaMessagePayloadDisplayNameKey];
-    NSString *senderId = [json objectForKey:MASConnectaMessagePayloadSenderIdKey];
-    NSString *dateValue = [json objectForKey:MASConnectaMessagePayloadSentTimeKey];
     double timeInMilisInt64 = (double)[dateValue longLongValue]/1000;
     NSDate *sentTime = [NSDate dateWithTimeIntervalSince1970:timeInMilisInt64];
     MASSenderType senderType;
@@ -86,7 +94,7 @@
     
         senderType = MASSenderTypeUnknown;
     }
-    else if (json && [json.allKeys containsObject:MASConnectaMessagePayloadSenderTypeKey]){
+    else if (json && [json isKindOfClass:[NSDictionary class]] && [json.allKeys containsObject:MASConnectaMessagePayloadSenderTypeKey]){
         
         senderType = [self masSenderTypeForString:[json objectForKey:MASConnectaMessagePayloadSenderTypeKey]];
     }
