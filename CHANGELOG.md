@@ -1,3 +1,11 @@
+# Version 1.6.10
+
+### Bug fixes
+- `MASMQTTClient` was unable to establish MQTT connection if the server presents a chain of certificates and the `msso_config.json` file contains only leaf certificate. The Mobile SDK now properly establishes MQTT connection with leaf certificate only in the configuration file. [US436059]
+
+### New features
+None.
+
 # Version 1.6.00
 
 ### Bug fixes
