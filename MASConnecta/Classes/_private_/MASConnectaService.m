@@ -48,6 +48,12 @@
 
 # pragma mark - Public
 
++ (void)load
+{
+    [MASService registerSubclass:[self class] serviceUUID:@"ce68de11-609c-42cb-9fb1-96d661e9ff17"];
+}
+
+
 - (NSString *)debugDescription
 {
     return [NSString stringWithFormat:@"%@\n\n", [super debugDescription]];
