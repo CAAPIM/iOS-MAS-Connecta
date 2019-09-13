@@ -671,6 +671,7 @@
 			buildSettings = {
 				ENABLE_BITCODE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Debug;
 		};
@@ -679,6 +680,7 @@
 			buildSettings = {
 				ENABLE_BITCODE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
