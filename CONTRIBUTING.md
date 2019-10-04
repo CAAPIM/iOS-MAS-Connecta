@@ -23,7 +23,7 @@ Follow these steps for pull requests:
 ### Contributor License Agreement ("CLA")
 To accept pull requests, submit a CLA. (Submitting a single CLA lets you work on any open source projects from Broadcom, Inc.)
 
-Complete your CLA here: <https://www.clahub.com/agreements/CAAPIM/iOS-MAS-Connecta>
+Complete your CLA here: <https://www.clahub.com/agreements/CAAPIM/iOS-MAS-Proximity>
 
 ## Bugs
 We work hard to avoid them, but they still happen. If you're a Broadcom customer, open an issue in our [Support Page][casupport], otherwise use GitHub issues.
@@ -50,6 +50,6 @@ By contributing to the iOS Mobile SDK, you agree that your contributions will be
 [guidelines]: /GUIDELINES.md
 [community]: https://community.broadcom.com/enterprisesoftware/communities/communityhomeblogs?CommunityKey=0f580f5f-30a4-41de-a75c-e5f433325a18
 [license-link]: /LICENSE
-[cla]: https://www.clahub.com/agreements/CAAPIM/iOS-MAS-Connecta
+[cla]: https://www.clahub.com/agreements/CAAPIM/iOS-MAS-Proximity
 [casupport]: https://casupport.broadcom.com
 
